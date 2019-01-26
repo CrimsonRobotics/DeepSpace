@@ -21,7 +21,7 @@ public class OI {
 	private Joystick driverRight = new Joystick(1);		//Joysticks are defined; Joystick "driverright" is in port 1
   private Joystick coDriver = new Joystick(2);
   private JoystickButton intake = new JoystickButton(coDriver, 1);
-
+  private JoystickButton climberButton = new JoystickButton(coDriver, 2);
 	
 	
 	

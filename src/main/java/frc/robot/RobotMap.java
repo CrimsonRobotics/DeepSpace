@@ -27,7 +27,10 @@ public class RobotMap {
   public static int lm1= 1;
   public static int lm2 = 2;
 
-  public static int climb = 8;
+  public static int climberBackRight = 8;
+  public static int climberBackLeft = 14;
+  public static int climberFrontRight = 15;
+  public static int climberFrontLeft = 16;
 
   public static int intake1 = 12;
   public static int intake2 = 13;
