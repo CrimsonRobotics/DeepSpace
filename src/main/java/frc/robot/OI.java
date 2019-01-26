@@ -4,10 +4,10 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-
 package frc.robot;
-
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.*;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,14 +15,28 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
+
+  
   private Joystick driverLeft = new Joystick(0);		//Joysticks are defined; Joystick "driverLeft" is in port 0
 	private Joystick driverRight = new Joystick(1);		//Joysticks are defined; Joystick "driverright" is in port 1
-	private Joystick coDriver = new Joystick(2);
-  
-  
+  private Joystick coDriver = new Joystick(2);
+  private JoystickButton intake = new JoystickButton(coDriver, 1);
 
-
-  public Joystick getcoDriver(){
+	
+	
+	
+	
+	
+	public OI(){
+		
+		
+		
+		//dhs
+	}
+	
+	
+	
+	public Joystick getcoDriver(){
 		
 		return coDriver;
 	}
@@ -36,8 +50,6 @@ public class OI {
 		
 		return driverRight;
 	}
-
-  
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
