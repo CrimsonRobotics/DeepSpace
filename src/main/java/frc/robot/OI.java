@@ -7,6 +7,7 @@
 package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
+import frc.robot.commands.ClimberUp;
 
 
 /**
@@ -20,15 +21,15 @@ public class OI {
   private Joystick driverLeft = new Joystick(0);		//Joysticks are defined; Joystick "driverLeft" is in port 0
 	private Joystick driverRight = new Joystick(1);		//Joysticks are defined; Joystick "driverright" is in port 1
   private Joystick coDriver = new Joystick(2);
-  private JoystickButton intake = new JoystickButton(coDriver, 1);
-  private JoystickButton climberButton = new JoystickButton(coDriver, 2);
+  private Button intake = new JoystickButton(coDriver, 1);
+  private Button climberButton = new JoystickButton(coDriver, 2);
 	
 	
 	
 	
 	
 	public OI(){
-		
+  climberButton.whenPressed(new ClimberUp());	
 		
 		
 		//dhs
