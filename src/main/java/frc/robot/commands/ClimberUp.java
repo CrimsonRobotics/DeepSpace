@@ -18,6 +18,7 @@ public class ClimberUp extends Command {
     public ClimberUp() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.climb);
+        
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
    
