@@ -23,7 +23,7 @@ public class Elevator extends Subsystem {
 	DigitalInput bottomElevator;
 	DigitalInput nnewl;
 	
-	
+	//
 	public Elevator(int el1, int el2, int lmB, int lmT) {
     	Elevator1 = new WPI_TalonSRX(el1);
     	Elevator2 = new WPI_TalonSRX(el2);
