@@ -4,7 +4,7 @@ import frc.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
+/*
  *
  */
 public class ShootOut extends Command {
