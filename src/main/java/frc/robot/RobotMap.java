@@ -33,8 +33,6 @@ public class RobotMap {
   public static int climberFrontRight = 15;
   public static int climberFrontLeft = 16;
 
-  public static int EncoderCBR = 1;
-
   public static int intake1 = 31;
   public static int intake2 = 32;
 
