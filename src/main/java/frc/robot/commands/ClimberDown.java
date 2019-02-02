@@ -11,11 +11,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class ClimberUp extends Command {
+public class ClimberDown extends Command {
 	WPI_TalonSRX Elevator1;
 	WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public ClimberUp() {
+    public ClimberDown() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.climb);
         
