@@ -32,8 +32,7 @@ public class ClimberUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.moveElevator(Robot.m_oi.getcoDriver());
-    	//while (limitSwitch.get()) {
+        Robot.climb.ClimberUp();    	//while (limitSwitch.get()) {
     		//Timer.delay(10);
     	}
     	

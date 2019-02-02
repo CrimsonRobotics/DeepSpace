@@ -32,7 +32,7 @@ public class Intake extends Subsystem {
 
     talon1 = new WPI_TalonSRX(id1);
     talon2 = new WPI_TalonSRX(id2);
-
+  
   }
 
   public void intakeIn() {
