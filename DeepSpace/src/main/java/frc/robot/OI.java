@@ -7,6 +7,10 @@
 package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
+import frc.robot.commands.IntakeIn;
+import frc.robot.commands.IntakeOut;
+import frc.robot.commands.IntakeStop;
+
 
 //import edu.wpi.first.wpilibj.buttons;
 
@@ -24,15 +28,18 @@ public class OI {
   //private JoystickButton intake = new JoystickButton(coDriver, 1);
   //private JoystickButton climberButton = new JoystickButton(coDriver, 2);
 	
-	private Button intake = new JoystickButton(coDriver,1);
-
+	private JoystickButton intake = new JoystickButton(coDriver,1);
+  private JoystickButton intake2 = new JoystickButton(coDriver,4);
 	
 	
 	
 	public OI(){
 		
-		
-		
+    intake.whenPressed(new IntakeOut());
+    intake.whenReleased(new IntakeStop());
+    intake2.whenPressed(new IntakeIn());
+    intake2.whenReleased(new IntakeStop());
+		//
 		//dhs
 	}
 	

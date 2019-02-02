@@ -39,8 +39,8 @@ public class RobotMap {
   public static int climberFrontRight = 15;
   public static int climberFrontLeft = 16;
 
-  public static int intake1 = 12;
-  public static int intake2 = 13;
+  public static int intake1 = 31;
+  public static int intake2 = 32;
 
   public static int shoot1 = 17;
   public static int shoot2 = 18;
