@@ -4,10 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-<<<<<<< HEAD
 
-=======
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -15,20 +12,12 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-<<<<<<< HEAD
 
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Shooter;
 //import frc.robot.subsystems.Climber;
-=======
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.Elevator;
-import frc.robot.subsystems.Climber;
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 import frc.robot.subsystems.Intake;
 
 /**
@@ -41,14 +30,9 @@ import frc.robot.subsystems.Intake;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
-<<<<<<< HEAD
   public static final Shooter Shooter = new Shooter(RobotMap.shoot1, RobotMap.shoot2); 
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
   //public static final Climber climb = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
-=======
-  public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
-  public static final Climber climb = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
   public static final Elevator elevator = new Elevator(RobotMap.Elevator1, RobotMap.Elevator2,RobotMap.lm1,RobotMap.lm2);
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
   Command m_autonomousCommand;
@@ -61,11 +45,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-<<<<<<< HEAD
     
-=======
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
@@ -156,9 +136,4 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
-<<<<<<< HEAD
   }}
-=======
-  }
-}
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90

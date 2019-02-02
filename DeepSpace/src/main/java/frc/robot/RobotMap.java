@@ -13,7 +13,6 @@ package frc.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-<<<<<<< HEAD
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -21,8 +20,6 @@ package frc.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-=======
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 public class RobotMap {
 
 
@@ -42,17 +39,11 @@ public class RobotMap {
   public static int climberFrontRight = 15;
   public static int climberFrontLeft = 16;
 
-<<<<<<< HEAD
   public static int intake1 = 31;
   public static int intake2 = 32;
 
   public static int shoot1 = 17;
   public static int shoot2 = 18;
-=======
-  public static int intake1 = 12;
-  public static int intake2 = 13;
-
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

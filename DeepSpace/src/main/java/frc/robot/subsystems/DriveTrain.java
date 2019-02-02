@@ -1,6 +1,5 @@
 package frc.robot.subsystems;
 
-<<<<<<< HEAD
 import frc.robot.commands.TeleOpDrive;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -9,18 +8,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-=======
-
-
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PWMTalonSRX;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.commands.TeleOpDrive;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 
 /**
  *
@@ -31,11 +18,7 @@ public class DriveTrain extends Subsystem {
 	public WPI_TalonSRX bL;
 	public WPI_TalonSRX fR;
 	public WPI_TalonSRX bR;
-<<<<<<< HEAD
 	//Talons are definedfdjkkl
-=======
-	//Talons are defined
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 	
 	DifferentialDrive drive; 
 	//RobotDrive instance to control motors during teleop
@@ -63,13 +46,8 @@ public class DriveTrain extends Subsystem {
 	    
 	    //defines what is with what
 	    
-<<<<<<< HEAD
 	    bL.follow(fL);//fL leads bL follows
 		bR.follow(fR);//fR leads bR follows
-=======
-	   // bL.follow(fL);//fL leads bL follows
-		//bR.follow(fR);//fR leads bR follows
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 	
 		drive = new DifferentialDrive(this.leftDrive, this.rightDrive);
 	    

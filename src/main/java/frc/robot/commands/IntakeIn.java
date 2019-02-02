@@ -7,13 +7,19 @@
 
 package frc.robot.commands;
 
+<<<<<<< HEAD
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+=======
+import frc.robot.Robot;
+import edu.wpi.first.wpilibj.command.Command;
+>>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 
 /**
  * An example command.  You can replace me with your own command.
  */
 public class IntakeIn extends Command {
+<<<<<<< HEAD
   public IntakeIn() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_subsystem);
@@ -48,3 +54,38 @@ public class IntakeIn extends Command {
   protected void interrupted() {
   }
 }
+=======
+	public IntakeIn() {
+		// Use requires() here to declare subsystem dependencies
+		requires(Robot.intake);
+	}
+
+	// Called just before this Command runs the first time
+	@Override
+	protected void initialize() {
+	}
+
+	// Called repeatedly when this Command is scheduled to run
+	@Override
+	protected void execute() {
+		Robot.intake.intakeIn();
+	}
+
+	// Make this return true when this Command no longer needs to run execute()
+	@Override
+	protected boolean isFinished() {
+		return true;
+	}
+
+	// Called once after isFinished returns true
+	@Override
+	protected void end() {
+	}
+
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	@Override
+	protected void interrupted() {
+	}
+}
+>>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
