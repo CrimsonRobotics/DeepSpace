@@ -7,7 +7,6 @@
 package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
-<<<<<<< HEAD
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
@@ -15,11 +14,9 @@ import frc.robot.commands.IntakeStop;
 
 //import edu.wpi.first.wpilibj.buttons;
 
-=======
 import frc.robot.commands.ClimberUp;
 
 
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -31,13 +28,13 @@ public class OI {
   private Joystick driverLeft = new Joystick(0);		//Joysticks are defined; Joystick "driverLeft" is in port 0
 	private Joystick driverRight = new Joystick(1);		//Joysticks are defined; Joystick "driverright" is in port 1
   private Joystick coDriver = new Joystick(2);
-<<<<<<< HEAD
   //private JoystickButton intake = new JoystickButton(coDriver, 1);
   //private JoystickButton climberButton = new JoystickButton(coDriver, 2);
 	
 	private JoystickButton intake = new JoystickButton(coDriver,1);
   private JoystickButton intake2 = new JoystickButton(coDriver,4);
-	
+  private Button climberButton = new JoystickButton(coDriver, 2);
+
 	
 	//
 	public OI(){
@@ -46,20 +43,9 @@ public class OI {
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn());
     intake2.whenReleased(new IntakeStop());
+    climberButton.whenPressed(new ClimberUp());	
+
 		//
-=======
-  private Button intake = new JoystickButton(coDriver, 1);
-  private Button climberButton = new JoystickButton(coDriver, 2);
-	
-	
-	
-	
-	
-	public OI(){
-  climberButton.whenPressed(new ClimberUp());	
-		
-		
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
 		//dhs
 	}
 	
@@ -106,8 +92,4 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 83372347a4539a25f6cc31e5dff3471897fe9e90
