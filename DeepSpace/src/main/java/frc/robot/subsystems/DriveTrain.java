@@ -18,7 +18,7 @@ public class DriveTrain extends Subsystem {
 	public WPI_TalonSRX bL;
 	public WPI_TalonSRX fR;
 	public WPI_TalonSRX bR;
-	//Talons are defined
+	//Talons are definedfdjkkl
 	
 	DifferentialDrive drive; 
 	//RobotDrive instance to control motors during teleop
