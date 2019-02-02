@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 import java.lang.management.CompilationMXBean;
 
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class Climber extends Subsystem {
@@ -32,8 +33,9 @@ public class Climber extends Subsystem {
 		setDefaultCommand(new ClimberUp());
 	}
 	public void climb(){
-		
-			
+		climberBackLeft.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,0,0);
+	   	climberBackRight.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,0,0);
+		climberFrontLeft.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
 		}
 	}
 
