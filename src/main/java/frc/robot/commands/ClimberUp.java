@@ -17,7 +17,7 @@ public class ClimberUp extends Command {
 	//DigitalInput limitSwitch;
     public ClimberUp() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.climb);
+        requires(Robot.m_subsystem);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
@@ -32,7 +32,7 @@ public class ClimberUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.climb.ClimberUp();    	//while (limitSwitch.get()) {
+        Robot.climber.ClimberUp();    	//while (limitSwitch.get()) {
     		//Timer.delay(10);
     	}
     	

@@ -22,7 +22,7 @@ public class Climber extends Subsystem {
 	private WPI_TalonSRX climberBackLeft;
 	private WPI_TalonSRX climberFrontRight;
 	private WPI_TalonSRX climberFrontLeft;
-	private Encoder EncoderCBR;
+	//private Encoder EncoderCBR;
 	private final double INPUT_MULTIPLIER = 1;
 
 	public Climber(int climbIDBL, int climbIDBR, int climbIDFL, int climbIDFR){
@@ -30,20 +30,17 @@ public class Climber extends Subsystem {
 		climberBackLeft = new WPI_TalonSRX(climbIDBL);
 		climberFrontRight = new WPI_TalonSRX(climbIDFR);
 		climberFrontLeft = new WPI_TalonSRX(climbIDFL);
-		climberBackRight.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-		climberBackRight.setSensorPhase(true);
+		climberBackLeft.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
+		climberBackLeft.setSensorPhase(true);
 	}
 	@Override
 	protected void initDefaultCommand() {
 		//setDefaultCommand(new ClimberUp());
 	}
 	public void ClimberUp(){
-		if(climberBackRight.getSelectedSensorPosition()<500){
-			climberBackLeft.set(.1);
-			climberFrontLeft.set(.1);
-		//opposite direction as other two
-			climberFrontRight.set(-.1);
-			climberBackRight.set(-.1);
+		if(climberBackLeft.getSelectedSensorPosition()<500){
+			climberBackLeft.set(-.5);
+
 			}
 		else{
 			climberBackLeft.set(0);
