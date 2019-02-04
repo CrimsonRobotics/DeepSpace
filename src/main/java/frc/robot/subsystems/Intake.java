@@ -25,29 +25,37 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
  * An example subsystem.  You can replace me with your own Subsystem.
  */
 public class Intake extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-	WPI_TalonSRX talon1;
-	//PWMTalonSRX talon2;//Right
-	public Intake(int id1,int id2) {
-		talon1 = new WPI_TalonSRX(id1);
-		//talon2 = new WPI_TalonSRX(5);
-	//	talon2.follow(talon1);
-	}
-	public void intakeIn() {
-		talon1.set(.7);
-	//	talon2.set(-.7);
-	}
-	public void intakeStop() {
-		talon1.set(0);
-		//talon2.set(0);
-	}
-	public void intakeOut() {
-		talon1.set(-1);
-		//talon2.set(1);
-    }
-    public void initDefaultCommand() {
-		// Set the default command for a subsystem here.
-		// setDefaultCommand(new MySpecialCommand());
-	}
+  WPI_TalonSRX talon1;//Left
+  WPI_TalonSRX talon2;//Right
+  
+  public Intake(int id1, int id2){
+
+    talon1 = new WPI_TalonSRX(id1);
+    talon2 = new WPI_TalonSRX(id2);
+  
+  }
+
+  public void intakeIn() {
+		talon1.set(-.4);
+		talon2.set(-.4);
+  }
+  
+  public void intakeOut() {
+		talon1.set(.3);
+		talon2.set(.3);
+  }
+  public void intakeStop() {
+    talon1.set(0);
+    talon2.set(0);
+  }
+  
+
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
+
+  @Override
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
+  }
 }

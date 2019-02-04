@@ -3,8 +3,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 //import edu.wpi.first.wpilibj.DigitalInput; 
 
@@ -17,7 +17,7 @@ public class ClimberUp extends Command {
 	//DigitalInput limitSwitch;
     public ClimberUp() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.climb);
+        requires(Robot.m_subsystem);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
@@ -32,8 +32,7 @@ public class ClimberUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.moveElevator(Robot.m_oi.getcoDriver());
-    	//while (limitSwitch.get()) {
+        Robot.climber.ClimberUp();    	//while (limitSwitch.get()) {
     		//Timer.delay(10);
     	}
     	
