@@ -50,5 +50,8 @@ public class Climber extends Subsystem {
 			climberBackRight.set(0);
 		}
 		}
+	public void resetEncoder(){
+		climberBackLeft.setSelectedSensorPosition(0);
+	}
 	}
 
