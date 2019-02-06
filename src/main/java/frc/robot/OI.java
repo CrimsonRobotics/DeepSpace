@@ -45,8 +45,8 @@ public class OI {
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn());
     intake2.whenReleased(new IntakeStop());
-    testingEncoder.whenPressed(new resetEncoder());
-    //climberButton.whenPressed(new ClimberUp());	
+    //testingEncoder.whenPressed(new resetEncoder());
+   // climberButton.whenPressed(new ClimberUp());	
 
 		//
 		//dhs
