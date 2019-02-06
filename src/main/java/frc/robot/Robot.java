@@ -53,7 +53,8 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     new Thread(() -> {
       UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-      camera.setResolution(320, 240);
+     // UsbCamera
+      camera.setResolution(160, 120);
       // might have to drop resolution further during competition
       
       CvSink cvSink = CameraServer.getInstance().getVideo();
