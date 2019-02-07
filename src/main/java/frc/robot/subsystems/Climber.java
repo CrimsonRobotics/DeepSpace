@@ -18,46 +18,35 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 
 
 public class Climber extends Subsystem {
-	private WPI_TalonSRX climberBackRight;
-	private WPI_TalonSRX climberBackLeft;
-	private WPI_TalonSRX climberFrontRight;
-	private WPI_TalonSRX climberFrontLeft;
+	public WPI_TalonSRX climberBackRight;
+	public WPI_TalonSRX climberBackLeft;
+	public WPI_TalonSRX climberFrontRight;
+	public WPI_TalonSRX climberFrontLeft;
 	//private Encoder EncoderCBR;
-	private double INPUT_Speed = .1;
+	//private double INPUT_Speed = .1;
 
 	public Climber(int climbIDBL, int climbIDBR, int climbIDFL, int climbIDFR){
 		climberBackRight = new WPI_TalonSRX(climbIDBR);
 		climberBackLeft = new WPI_TalonSRX(climbIDBL);
 		climberFrontRight = new WPI_TalonSRX(climbIDFR);
 		climberFrontLeft = new WPI_TalonSRX(climbIDFL);
-		climberBackLeft.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-		climberBackLeft.setSensorPhase(true);
+		//climberBackLeft.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
+		//climberBackLeft.setSensorPhase(true);
 	}
 	@Override
 	protected void initDefaultCommand() {
 		//setDefaultCommand(new ClimberUp());
 	}
 	public void ClimberUp(){
-		while(climberBackLeft.getSelectedSensorPosition()<500){
+		
+		//while(climberBackLeft.getSelectedSensorPosition()<500){
 			
-			climberBackLeft.set(-INPUT_Speed);
-			climberBackRight.set(-INPUT_Speed);
-			climberFrontLeft.set(INPUT_Speed);
-			climberFrontRight.set(INPUT_Speed);
-			if(INPUT_Speed<=1){
-				INPUT_Speed=INPUT_Speed*1.05;
-			}
-			}
-		/*if(climberBackLeft.getSelectedSensorPosition()>=500){
-			climberBackLeft.set(0);
-			climberFrontLeft.set(0);
-		//opposite direction as other two
-			climberFrontRight.set(0);
-			climberBackRight.set(0);
-		}*/
+			climberBackLeft.set(-.2);
+			climberBackRight.set(.2);
+			climberFrontLeft.set(-.2);
+			climberFrontRight.set(.2);
+	
 		}
-	public void resetEncoder(){
-		climberBackLeft.setSelectedSensorPosition(0);
-	}
+	
 	}
 

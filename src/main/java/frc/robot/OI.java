@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
-import frc.robot.commands.resetEncoder;
+
 
 
 //import edu.wpi.first.wpilibj.buttons;
@@ -34,7 +34,7 @@ public class OI {
 	
 	private JoystickButton intake = new JoystickButton(coDriver,2);
   private JoystickButton intake2 = new JoystickButton(coDriver,1);
-  private JoystickButton climberButton = new JoystickButton(coDriver, 6);
+  //private JoystickButton climberButton = new JoystickButton(coDriver, 6);
   private JoystickButton testingEncoder = new JoystickButton(coDriver, 7);
 
 	
@@ -45,8 +45,7 @@ public class OI {
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn());
     intake2.whenReleased(new IntakeStop());
-    //testingEncoder.whenPressed(new resetEncoder());
-   // climberButton.whenPressed(new ClimberUp());	
+    //climberButton.whenPressed(new ClimberUp());	
 
 		//
 		//dhs
