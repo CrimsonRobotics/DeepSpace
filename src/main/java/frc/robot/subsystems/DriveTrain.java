@@ -38,7 +38,7 @@ public class DriveTrain extends Subsystem {
 		bL = new WPI_TalonSRX(bLID);
 		fR = new WPI_TalonSRX(fRID);
 		bR = new WPI_TalonSRX(bRID);
-		
+		//bL.setSensorPhase(true);
 		//talons are connected to actual IDs via the constructor
 		
 		leftDrive = new SpeedControllerGroup(fL, bL);

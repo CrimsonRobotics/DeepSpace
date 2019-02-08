@@ -1,23 +1,26 @@
 package frc.robot.commands;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
-
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+//import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 //import edu.wpi.first.wpilibj.DigitalInput; 
 
 /**
  *
  */
-public class resetEncoder extends Command {
-	WPI_TalonSRX Elevator1;
-	WPI_TalonSRX Elevator2;
+public class DropperUp extends Command {
+	//WPI_TalonSRX Elevator1;
+	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public resetEncoder() {
+    public DropperUp() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.m_subsystem);
+        //requires(Robot.m_subsystem);
+        requires(Robot.hatchintake);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
@@ -26,16 +29,15 @@ public class resetEncoder extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//limitSwitch = new DigitalInput(1);
+    	
    
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.climber.resetEncoder();
-    	//while (limitSwitch.get()) {
-    		//Timer.delay(10);
-    	}
+        Robot.hatchintake.DropperUp();    	//while (limitSwitch.get()) {
+            //Timer.delay(10);
+           }
     	
   
     
