@@ -36,8 +36,8 @@ public class Intake extends Subsystem {
   }
 
   public void intakeIn() {
-		talon1.set(-.6);
-		talon2.set(-.6);
+		talon1.set(-.4);
+		talon2.set(-.4);
   }
   
   public void intakeOut() {

@@ -38,7 +38,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static final Shooter Shooter = new Shooter(RobotMap.shoot1, RobotMap.shoot2); 
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
-  public static final Climber climb = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
+  public static final Climber climber = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
   public static final Elevator elevator = new Elevator(RobotMap.Elevator1, RobotMap.Elevator2,RobotMap.lm1,RobotMap.lm2);
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
   Command m_autonomousCommand;
@@ -52,13 +52,16 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_oi = new OI();
     new Thread(() -> {
-      UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-     // UsbCamera
-      camera.setResolution(160, 120);
+      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
+      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
+      camera1.setResolution(320,240);
+      camera2.setResolution(320,240);
       // might have to drop resolution further during competition
+      camera1.setFPS(15);
+      camera2.setFPS(15);
       
       CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
       
       Mat source = new Mat();
       Mat output = new Mat();

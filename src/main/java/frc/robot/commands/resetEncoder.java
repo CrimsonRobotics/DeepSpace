@@ -2,6 +2,8 @@ package frc.robot.commands;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 //import edu.wpi.first.wpilibj.DigitalInput; 
@@ -9,11 +11,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class ClimberDown extends Command {
+public class resetEncoder extends Command {
 	WPI_TalonSRX Elevator1;
 	WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public ClimberDown() {
+    public resetEncoder() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.m_subsystem);
         
@@ -30,7 +32,7 @@ public class ClimberDown extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-  //  	Robot.climber.ClimberDown();
+    	Robot.climber.resetEncoder();
     	//while (limitSwitch.get()) {
     		//Timer.delay(10);
     	}
