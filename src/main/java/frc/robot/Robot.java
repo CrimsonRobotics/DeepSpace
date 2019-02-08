@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.HatchIntake;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Climber;
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static final Shooter Shooter = new Shooter(RobotMap.shoot1, RobotMap.shoot2); 
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
+  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.centerS, RobotMap.clawS, RobotMap.dropperS, RobotMap.grabberS);
   public static final Climber climber = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
   public static final Elevator elevator = new Elevator(RobotMap.Elevator1, RobotMap.Elevator2,RobotMap.lm1,RobotMap.lm2);
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
@@ -51,7 +53,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    
+
     new Thread(() -> {
       UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
       camera.setResolution(320,240);

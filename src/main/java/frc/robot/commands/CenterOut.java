@@ -13,14 +13,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class ClimberUp extends Command {
+public class CenterOut extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public ClimberUp() {
+    public CenterOut() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.climber);
+        requires(Robot.hatchintake);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
@@ -35,13 +35,9 @@ public class ClimberUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.climber.ClimberUp();    	//while (limitSwitch.get()) {
+        Robot.hatchintake.CenterOut();    	//while (limitSwitch.get()) {
             //Timer.delay(10);
-            SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
-            SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
-            SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
-            SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
-    	}
+           }
     	
   
     

@@ -5,17 +5,22 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 package frc.robot;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
-
-
+import frc.robot.commands.CenterOut;
+import frc.robot.commands.ClawIn;
+import frc.robot.commands.ClawOut;
 
 //import edu.wpi.first.wpilibj.buttons;
 
 import frc.robot.commands.ClimberUp;
+import frc.robot.commands.Drop;
+import frc.robot.commands.DropperUp;
+import frc.robot.commands.Grab;
 
 
 /**
@@ -35,8 +40,12 @@ public class OI {
 	private JoystickButton intake = new JoystickButton(coDriver,2);
   private JoystickButton intake2 = new JoystickButton(coDriver,1);
   //private JoystickButton climberButton = new JoystickButton(coDriver, 6);
-  private JoystickButton testingEncoder = new JoystickButton(coDriver, 7);
+  //private JoystickButton testingEncoder = new JoystickButton(coDriver, 7);
 
+  private JoystickButton clawButton = new JoystickButton(coDriver,7);
+  private JoystickButton dropperButton = new JoystickButton(coDriver,8);
+  private JoystickButton grabberButton = new JoystickButton(coDriver,9);
+  private JoystickButton centerButton = new JoystickButton(coDriver,10);
 	
 	//
 	public OI(){
@@ -47,6 +56,12 @@ public class OI {
     intake2.whenReleased(new IntakeStop());
     //climberButton.whenPressed(new ClimberUp());	
 
+    clawButton.whenPressed(new ClawIn());
+    clawButton.whenReleased(new ClawOut());
+    dropperButton.whenPressed(new Drop());
+    dropperButton.whenReleased(new DropperUp());
+    grabberButton.whenPressed(new Grab());
+    centerButton.whenPressed(new CenterOut());
 		//
 		//dhs
 	}
