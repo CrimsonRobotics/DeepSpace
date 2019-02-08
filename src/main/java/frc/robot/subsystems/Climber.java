@@ -38,8 +38,6 @@ public class Climber extends Subsystem {
 		//setDefaultCommand(new ClimberUp());
 	}
 	public void ClimberUp(){
-		
-		//while(climberBackLeft.getSelectedSensorPosition()<500){
 			
 			climberBackLeft.set(-.2);
 			climberBackRight.set(.2);
