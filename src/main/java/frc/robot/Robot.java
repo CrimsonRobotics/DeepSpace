@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.HatchIntake;
@@ -55,8 +54,12 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
 
     new Thread(() -> {
-      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
-      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
+      //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
+      //UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
+
+      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(0);
+      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+
       camera1.setResolution(320,240);
       camera2.setResolution(320,240);
       // might have to drop resolution further during competition
