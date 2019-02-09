@@ -20,10 +20,10 @@ public class RobotMap {
 
 
 
-  public static int DT_FRONTLEFT = 2;
-	public static int DT_BACKLEFT = 1;
-	public static int DT_FRONTRIGHT = 8;
-  public static int DT_BACKRIGHT= 7;
+  public static int DT_FRONTLEFT = 52;
+	public static int DT_BACKLEFT = 51;
+	public static int DT_FRONTRIGHT = 57;
+  public static int DT_BACKRIGHT= 58; 
    
   //public static int DT_FRONTLEFT = 0;
 	//public static int DT_BACKLEFT = 0;
@@ -53,6 +53,7 @@ public class RobotMap {
  // public static int centerS = 3;
   public static int grabberS = 0;
   public static int grabberS2 = 1;
+  //public static int Shifty = 0;
  // public static int centerS2 = 6;
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

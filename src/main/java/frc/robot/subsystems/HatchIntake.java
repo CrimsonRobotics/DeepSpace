@@ -17,6 +17,8 @@ public class HatchIntake extends Subsystem {
 	//private double INPUT_Speed = .1;
 
 	public HatchIntake(int DropperID,int GrabberID, int GrabberID2){
+		//Remember to do the module aswell!
+		
 		//ClawS = new Solenoid(ClawID);
 		DropperS = new Solenoid(DropperID);
 		GrabberS = new DoubleSolenoid(GrabberID, GrabberID2);
