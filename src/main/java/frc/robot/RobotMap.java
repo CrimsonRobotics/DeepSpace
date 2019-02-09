@@ -20,25 +20,25 @@ public class RobotMap {
 
 
 
-  public static int DT_FRONTLEFT = 4;
-	public static int DT_BACKLEFT = 3;
-	public static int DT_FRONTRIGHT = 11;
-  public static int DT_BACKRIGHT= 9;
-   /*
-  public static int DT_FRONTLEFT = 0;
-	public static int DT_BACKLEFT = 0;
-	public static int DT_FRONTRIGHT = 0;
-  public static int DT_BACKRIGHT= 0;
-*/
+  public static int DT_FRONTLEFT = 2;
+	public static int DT_BACKLEFT = 1;
+	public static int DT_FRONTRIGHT = 8;
+  public static int DT_BACKRIGHT= 7;
+   
+  //public static int DT_FRONTLEFT = 0;
+	//public static int DT_BACKLEFT = 0;
+	//public static int DT_FRONTRIGHT = 0;
+  //public static int DT_BACKRIGHT= 0;
+
   public static int Elevator1 = 6;
   public static int Elevator2 = 7;
   public static int lm1= 1;
   public static int lm2 = 2;
 
-  public static int climberBackRight = 9;
-  public static int climberBackLeft = 3;
-  public static int climberFrontRight = 11;
-  public static int climberFrontLeft = 4;
+  public static int climberBackRight = 0;
+  public static int climberBackLeft =  0;
+  public static int climberFrontRight = 0;
+  public static int climberFrontLeft = 0;
  // public WPI_TalonSRX climberBackLeft;
   //climberBackLeft = new WPI_TalonSRX(3);
 

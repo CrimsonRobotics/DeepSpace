@@ -52,7 +52,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-
+    System.out.println("running");
     new Thread(() -> {
       //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
       //UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();

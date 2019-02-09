@@ -39,8 +39,7 @@ public class OI {
 	
 	private JoystickButton intake = new JoystickButton(coDriver,2);
   private JoystickButton intake2 = new JoystickButton(coDriver,1);
-  //private JoystickButton climberButton = new JoystickButton(coDriver, 6);
-  //private JoystickButton testingEncoder = new JoystickButton(coDriver, 7);
+  private JoystickButton climberButton = new JoystickButton(coDriver, 6);
 
   private JoystickButton clawButton = new JoystickButton(coDriver,7);
   private JoystickButton dropperButton = new JoystickButton(coDriver,8);
@@ -54,7 +53,7 @@ public class OI {
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn());
     intake2.whenReleased(new IntakeStop());
-    //climberButton.whenPressed(new ClimberUp());	
+//    climberButton.whileHeld(new ClimberUp());	
 
     clawButton.whenPressed(new ClawIn());
     clawButton.whenReleased(new ClawOut());
