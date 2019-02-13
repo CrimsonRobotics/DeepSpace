@@ -3,6 +3,10 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.Joystick;
+<<<<<<< HEAD
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+=======
+>>>>>>> 11c1f2a74c6d2b08f8c1dd9b9b57daaa3d43e1a0
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.ElevatorControl;
@@ -30,7 +34,7 @@ public class Elevator extends Subsystem {
 
 
 	//
-	public Elevator(int el1, int el2, int lmB, int lmT) {
+	public Elevator(int intake1, int intake2, int lmB, int lmT) {
     	Elevator1 = new WPI_TalonSRX(el1);
     	Elevator2 = new WPI_TalonSRX(el2);
 		   topElevator = new DigitalInput(1);
