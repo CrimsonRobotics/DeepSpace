@@ -5,6 +5,7 @@ import frc.robot.commands.TeleOpDrive;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -18,6 +19,8 @@ public class DriveTrain extends Subsystem {
 	public WPI_TalonSRX bL;
 	public WPI_TalonSRX fR;
 	public WPI_TalonSRX bR;
+	public Solenoid Shifty;
+	//public Solenoid notShifty;
 	//Talons are defined
 	
 	DifferentialDrive drive; 
@@ -38,7 +41,9 @@ public class DriveTrain extends Subsystem {
 		bL = new WPI_TalonSRX(bLID);
 		fR = new WPI_TalonSRX(fRID);
 		bR = new WPI_TalonSRX(bRID);
-		
+		Shifty = new Solenoid(59, 0);
+		//notShifty = new Solenoid(0);
+		//bL.setSensorPhase(true);
 		//talons are connected to actual IDs via the constructor
 		
 		leftDrive = new SpeedControllerGroup(fL, bL);
@@ -62,10 +67,17 @@ public class DriveTrain extends Subsystem {
 	
 	public void TeleOpCraneDrive(Joystick left, Joystick right){
 		
-		drive.arcadeDrive(-left.getY(), right.getX(), true);
+	 	drive.arcadeDrive(left.getY(), -right.getX(), true);
 		
 	}
-	
+	public void Shift(){
+		Shifty.set(true);
+		//notShifty.set(true);
+	} 
+	public void Unshift(){
+		Shifty.set(false);
+		//notShifty.set(false);
+	}
     public void initDefaultCommand() {
     	
     	setDefaultCommand(new TeleOpDrive());

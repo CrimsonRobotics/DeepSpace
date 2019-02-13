@@ -1,32 +1,46 @@
 package frc.robot.commands;
+
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+//import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+//import edu.wpi.first.wpilibj.DigitalInput; 
+
 /**
  *
  */
-public class TeleOpDrive extends Command {
-
-    public TeleOpDrive() {
+public class Shift extends Command {
+	//WPI_TalonSRX Elevator1;
+	//WPI_TalonSRX Elevator2;
+	//DigitalInput limitSwitch;
+    public Shift() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	
-    	requires(Robot.driveTrain); //do execute the command, this calls the newly made drivetrain from talons
+        //requires(Robot.m_subsystem);
+        requires(Robot.driveTrain);
+        
+       // WPI_TalonSRX(eL1).set(0.5); //?? 
+       
+   
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
+   
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.driveTrain.TeleOpCraneDrive(Robot.m_oi.getDriverLeft(), Robot.m_oi.getDriverRight());
-        SmartDashboard.putNumber("Encoder Front Left", Robot.driveTrain.fL.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Encoder Front Right", Robot.driveTrain.fR.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Encoder Back Left", Robot.driveTrain.bL.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Encoder Back Right", Robot.driveTrain.bR.getSensorCollection().getQuadraturePosition());
-    }
+        Robot.driveTrain.Shift();    	//while (limitSwitch.get()) {
+            //Timer.delay(10);
+           }
+    	
+  
+    
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

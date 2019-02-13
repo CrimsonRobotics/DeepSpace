@@ -12,9 +12,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.HatchIntake;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Climber;
@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static final Shooter Shooter = new Shooter(RobotMap.shoot1, RobotMap.shoot2); 
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
+  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.dropperS, RobotMap.grabberS,RobotMap.grabberS2);
   public static final Climber climber = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
   public static final Elevator elevator = new Elevator(RobotMap.Elevator1, RobotMap.Elevator2,RobotMap.lm1,RobotMap.lm2);
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
@@ -51,13 +52,22 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    System.out.println("running");
     new Thread(() -> {
-      UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-      camera.setResolution(320, 240);
+      //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
+      //UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
+
+      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(0);
+      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+
+      camera1.setResolution(320,240);
+      camera2.setResolution(320,240);
       // might have to drop resolution further during competition
+      camera1.setFPS(15);
+      camera2.setFPS(15);
       
       CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
       
       Mat source = new Mat();
       Mat output = new Mat();
