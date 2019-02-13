@@ -35,8 +35,8 @@ public class RobotMap {
   public static int lm1= 1;
   public static int lm2 = 2;
 
-  public static int climberBackRight = 0;
-  public static int climberBackLeft =  0;
+  public static int climberBackRight = 1;
+  public static int climberBackLeft =  2;
   public static int climberFrontRight = 0;
   public static int climberFrontLeft = 0;
  // public WPI_TalonSRX climberBackLeft;

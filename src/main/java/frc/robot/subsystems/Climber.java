@@ -36,6 +36,7 @@ public class Climber extends Subsystem {
 		//setDefaultCommand(new ClimberUp());
 	}
 	public void ClimberUp(){
+
 			 
 			climberBackLeft.set(.2);
 			climberBackRight.set(-.2);
@@ -47,6 +48,14 @@ public class Climber extends Subsystem {
 	//SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
 	//SmartDashboard.putNumber("Encoder Back- Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
 	//SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
+
+
+		climberBackLeft.set(.1);
+		climberFrontLeft.set(.1);
+		//opposite direction as other two
+		climberFrontRight.set(-.1);
+		climberBackRight.set(-.1);
+
 
 		}
 	

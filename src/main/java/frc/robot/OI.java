@@ -54,7 +54,7 @@ public class OI {
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn()); 
     intake2.whenReleased(new IntakeStop());
-    // climberButton.whileHeld(new ClimberUp());
+    climberButton.whileHeld(new ClimberUp());
 
     clawButton.whenPressed(new ClawIn());
     clawButton.whenReleased(new ClawOut());

@@ -43,8 +43,7 @@ public class ClimberUp extends Command {
             SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
             //SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
             
-    	}
-    	
+    	}    	
   
     
 
