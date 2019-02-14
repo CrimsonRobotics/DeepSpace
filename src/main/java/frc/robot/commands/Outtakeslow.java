@@ -20,7 +20,7 @@ public class Outtakeslow extends Command {
     public Outtakeslow() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.hatchintake);
+        requires(Robot.intake);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
