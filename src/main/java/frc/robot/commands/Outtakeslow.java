@@ -1,9 +1,8 @@
 package frc.robot.commands;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 //import edu.wpi.first.wpilibj.command.Command;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -19,8 +18,8 @@ public class Outtakeslow extends Command {
 	//DigitalInput limitSwitch;
     public Outtakeslow() {
         // Use requires() here to declare subsystem dependencies
-        //requires(Robot.m_subsystem);
-        requires(Robot.intake);
+        requires(Robot.m_subsystem);
+        
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
