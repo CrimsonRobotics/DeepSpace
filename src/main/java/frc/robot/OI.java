@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
+import frc.robot.commands.Outtakeslow;
 import frc.robot.commands.Shift;
 import frc.robot.commands.Unshift;
 import frc.robot.commands.CenterOut;
@@ -46,6 +47,7 @@ public class OI {
   private JoystickButton grabberButton = new JoystickButton(coDriver, 9);
   private JoystickButton centerButton = new JoystickButton(coDriver, 10);
   private JoystickButton shifter = new JoystickButton(driverLeft, 2);
+  private JoystickButton intake3 = new JoystickButton(coDriver, 3);
 
   //
   public OI() {
@@ -54,6 +56,8 @@ public class OI {
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn()); 
     intake2.whenReleased(new IntakeStop());
+    intake3.whenPressed(new Outtakeslow());
+    intake3.whenReleased(new IntakeStop());
     climberButton.whileHeld(new ClimberUp());
 
     clawButton.whenPressed(new ClawIn());

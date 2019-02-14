@@ -44,6 +44,10 @@ public class Intake extends Subsystem {
 		talon1.set(.4);
 		talon2.set(-.4);
   }
+  public void Outtakeslow () {
+		talon1.set(-.4);
+		talon2.set(.4);
+  }
   public void intakeStop() {
     talon1.set(0);
     talon2.set(0);

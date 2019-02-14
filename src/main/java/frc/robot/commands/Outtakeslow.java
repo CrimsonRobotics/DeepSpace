@@ -13,11 +13,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class CenterOut extends Command {
+public class Outtakeslow extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public CenterOut() {
+    public Outtakeslow() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
         requires(Robot.hatchintake);
@@ -35,7 +35,7 @@ public class CenterOut extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.hatchintake.CenterOut();    	//while (limitSwitch.get()) {
+        Robot.intake.Outtakeslow();    	//while (limitSwitch.get()) {
             //Timer.delay(10);
            }
     	
