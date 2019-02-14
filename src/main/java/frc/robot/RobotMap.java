@@ -35,10 +35,10 @@ public class RobotMap {
   public static int lm1= 1;
   public static int lm2 = 2;
 
-  public static int climberBackRight = 9;
-  public static int climberBackLeft = 3;
-  public static int climberFrontRight = 11;
-  public static int climberFrontLeft = 4;
+  public static int climberBackRight = 1001;
+  public static int climberBackLeft = 1002;
+  public static int climberFrontRight = 1003;
+  public static int climberFrontLeft = 1004;
  // public WPI_TalonSRX climberBackLeft;
   //climberBackLeft = new WPI_TalonSRX(3);
 

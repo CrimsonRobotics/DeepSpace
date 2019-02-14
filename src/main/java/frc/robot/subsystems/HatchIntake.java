@@ -17,8 +17,8 @@ public class HatchIntake extends Subsystem {
 	//private double INPUT_Speed = .1;
 
 	public HatchIntake(int CenterID,int ClawID,int DropperID,int GrabberID){
-		ClawS = new Solenoid(ClawID);
-		DropperS = new Solenoid(DropperID);
+		//ClawS = new Solenoid(ClawID);
+		//DropperS = new Solenoid(DropperID);
 	}
 	@Override
 	protected void initDefaultCommand() {

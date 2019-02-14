@@ -57,17 +57,18 @@ public class Robot extends TimedRobot {
       //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
       //UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
 
-      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(0);
-      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+      UsbCamera camera = CameraServer.getInstance().startAutomaticCapture(0);
+      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(1);
 
+      camera.setResolution(320,240);
       camera1.setResolution(320,240);
-      camera2.setResolution(320,240);
       // might have to drop resolution further during competition
+      camera.setFPS(15);
       camera1.setFPS(15);
-      camera2.setFPS(15);
-      
+
       CvSink cvSink = CameraServer.getInstance().getVideo();
       CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
+      
       
       Mat source = new Mat();
       Mat output = new Mat();
