@@ -36,7 +36,7 @@ public class ArmWork extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.arm.ArmWork(Robot.m_oi.getcoDriver()); 
-        SmartDashboard.putNumber("Encoder Arm", Robot.arm.Arm.getSensorCollection().getQuadraturePosition());  
+        SmartDashboard.putNumber("Encoder Arm", Robot.arm.Arm.getSensorCollection().getQuadraturePosition()); 0  
         //while (limitSwitch.get()) {
             //Timer.delay(10);
            }
