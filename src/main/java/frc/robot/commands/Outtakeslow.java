@@ -1,27 +1,46 @@
 package frc.robot.commands;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+//import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+//import edu.wpi.first.wpilibj.DigitalInput; 
 
 /**
  *
  */
-public class ElevatorUp extends Command {
-
-    //public MoveElevator() {
+public class CenterOut extends Command {
+	//WPI_TalonSRX Elevator1;
+	//WPI_TalonSRX Elevator2;
+	//DigitalInput limitSwitch;
+    public CenterOut() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	//requires(Robot.elevator);
-   // }
+        //requires(Robot.m_subsystem);
+        requires(Robot.hatchintake);
+        
+       // WPI_TalonSRX(eL1).set(0.5); //?? 
+       
+   
+    }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//Robot.elevator.moveElevator(Robot.m_oi.getcoDriver());
+    	
+   
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    }
+        Robot.hatchintake.CenterOut();    	//while (limitSwitch.get()) {
+            //Timer.delay(10);
+           }
+    	
+  
+    
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

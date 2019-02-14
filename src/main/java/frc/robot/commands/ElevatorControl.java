@@ -17,7 +17,7 @@ public class ElevatorControl extends Command {
 	//DigitalInput limitSwitch;
     public ElevatorControl() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.elevator);
+        //requires(Robot.elevator);
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
    
@@ -31,7 +31,7 @@ public class ElevatorControl extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.moveElevator(Robot.m_oi.getcoDriver());
+    	//Robot.elevator.moveElevator(Robot.m_oi.getcoDriver());
     	//while (limitSwitch.get()) {
     		//Timer.delay(10);
     	}
