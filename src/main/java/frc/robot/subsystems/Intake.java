@@ -10,16 +10,6 @@
 package frc.robot.subsystems;
 
 
-<<<<<<< HEAD
-
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.commands.ElevatorControl;
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Joystick;
-=======
->>>>>>> b530dc747a7af7cc27cbdff5fb2970c2cbebfab5
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 /**

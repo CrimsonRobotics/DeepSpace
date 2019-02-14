@@ -16,11 +16,6 @@ public class HatchIntake extends Subsystem {
 	//private Encoder EncoderCBR;
 	//private double INPUT_Speed = .1;
 
-<<<<<<< HEAD
-	public HatchIntake(int CenterID,int ClawID,int DropperID,int GrabberID){
-		//ClawS = new Solenoid(ClawID);
-		//DropperS = new Solenoid(DropperID);
-=======
 	public HatchIntake(int DropperID,int GrabberID, int GrabberID2){
 		//Remember to do the module aswell!
 		
@@ -28,7 +23,6 @@ public class HatchIntake extends Subsystem {
 		DropperS = new Solenoid(DropperID);
 		GrabberS = new DoubleSolenoid(GrabberID, GrabberID2);
 		//CenterS = new DoubleSolenoid(CenterID, CenterID2);
->>>>>>> b530dc747a7af7cc27cbdff5fb2970c2cbebfab5
 	}
 	@Override
 	protected void initDefaultCommand() {
