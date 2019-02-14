@@ -20,38 +20,47 @@ public class RobotMap {
 
 
 
-  public static int DT_FRONTLEFT = 4;
-	public static int DT_BACKLEFT = 3;
-	public static int DT_FRONTRIGHT = 11;
-  public static int DT_BACKRIGHT= 9;
-   /*
-  public static int DT_FRONTLEFT = 0;
-	public static int DT_BACKLEFT = 0;
-	public static int DT_FRONTRIGHT = 0;
-  public static int DT_BACKRIGHT= 0;
-*/
+  public static int DT_FRONTLEFT = 52;
+	public static int DT_BACKLEFT = 51;
+	public static int DT_FRONTRIGHT = 57;
+  public static int DT_BACKRIGHT= 58; 
+   
+  //public static int DT_FRONTLEFT = 0;
+	//public static int DT_BACKLEFT = 0;
+	//public static int DT_FRONTRIGHT = 0;
+  //public static int DT_BACKRIGHT= 0;
+
   public static int Elevator1 = 6;
   public static int Elevator2 = 7;
-  public static int lm1= 1;
-  public static int lm2 = 2;
+  public static int limitSwitch1= 1;
+  public static int limitSwitch2 = 2;
 
+  public static int climberBackRight = 1;
+  public static int climberBackLeft =  2;
+  public static int climberFrontRight = 0;
+  public static int climberFrontLeft = 0;
+
+<<<<<<< HEAD
   public static int climberBackRight = 1001;
   public static int climberBackLeft = 1002;
   public static int climberFrontRight = 1003;
   public static int climberFrontLeft = 1004;
+=======
+  public static int arm = 53;
+>>>>>>> b530dc747a7af7cc27cbdff5fb2970c2cbebfab5
  // public WPI_TalonSRX climberBackLeft;
   //climberBackLeft = new WPI_TalonSRX(3);
 
-  public static int intake1 = 31;
-  public static int intake2 = 32;
+  public static int intake2 = 55;
+  public static int intake1 = 54;
 
-  public static int shoot1 = 17;
-  public static int shoot2 = 18;
-
-  public static int clawS = 21;
-  public static int dropperS = 19;
-  public static int centerS = 20;
-  public static int grabberS = 22;
+ // public static int clawS = 1;
+  public static int dropperS = 3;
+ // public static int centerS = 3;
+  public static int grabberS = 0;
+  public static int grabberS2 = 1;
+  //public static int Shifty = 0;
+ // public static int centerS2 = 6;
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;

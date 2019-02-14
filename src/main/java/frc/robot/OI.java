@@ -11,6 +11,9 @@ import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
+import frc.robot.commands.Outtakeslow;
+import frc.robot.commands.Shift;
+import frc.robot.commands.Unshift;
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;
@@ -22,39 +25,39 @@ import frc.robot.commands.Drop;
 import frc.robot.commands.DropperUp;
 import frc.robot.commands.Grab;
 
-
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
 
-
-  
-  private Joystick driverLeft = new Joystick(0);		//Joysticks are defined; Joystick "driverLeft" is in port 0
-	private Joystick driverRight = new Joystick(1);		//Joysticks are defined; Joystick "driverright" is in port 1
+  private Joystick driverLeft = new Joystick(0); // Joysticks are defined; Joystick "driverLeft" is in port 0
+  private Joystick driverRight = new Joystick(1); // Joysticks are defined; Joystick "driverright" is in port 1
   private Joystick coDriver = new Joystick(2);
-  //private JoystickButton intake = new JoystickButton(coDriver, 1);
-  //private JoystickButton climberButton = new JoystickButton(coDriver, 2);
-	
-	private JoystickButton intake = new JoystickButton(coDriver,2);
-  private JoystickButton intake2 = new JoystickButton(coDriver,1);
-  //private JoystickButton climberButton = new JoystickButton(coDriver, 6);
-  //private JoystickButton testingEncoder = new JoystickButton(coDriver, 7);
+  // private JoystickButton intake = new JoystickButton(coDriver, 1);
+  // private JoystickButton climberButton = new JoystickButton(coDriver, 2);
 
-  private JoystickButton clawButton = new JoystickButton(coDriver,7);
-  private JoystickButton dropperButton = new JoystickButton(coDriver,8);
-  private JoystickButton grabberButton = new JoystickButton(coDriver,9);
-  private JoystickButton centerButton = new JoystickButton(coDriver,10);
-	
-	//
-	public OI(){
-		
+  private JoystickButton intake = new JoystickButton(coDriver, 2);
+  private JoystickButton intake2 = new JoystickButton(coDriver, 1);
+  private JoystickButton climberButton = new JoystickButton(coDriver, 6);
+
+  private JoystickButton clawButton = new JoystickButton(coDriver, 7);
+  private JoystickButton dropperButton = new JoystickButton(coDriver, 8);
+  private JoystickButton grabberButton = new JoystickButton(coDriver, 9);
+  private JoystickButton centerButton = new JoystickButton(coDriver, 10);
+  private JoystickButton shifter = new JoystickButton(driverLeft, 2);
+  private JoystickButton intake3 = new JoystickButton(coDriver, 3);
+
+  //
+  public OI() {
+
     intake.whenPressed(new IntakeOut());
     intake.whenReleased(new IntakeStop());
-    intake2.whenPressed(new IntakeIn());
+    intake2.whenPressed(new IntakeIn()); 
     intake2.whenReleased(new IntakeStop());
-    //climberButton.whenPressed(new ClimberUp());	
+    intake3.whenPressed(new Outtakeslow());
+    intake3.whenReleased(new IntakeStop());
+    climberButton.whileHeld(new ClimberUp());
 
     clawButton.whenPressed(new ClawIn());
     clawButton.whenReleased(new ClawOut());
@@ -62,6 +65,8 @@ public class OI {
     dropperButton.whenReleased(new DropperUp());
     grabberButton.whenPressed(new Grab());
     centerButton.whenPressed(new CenterOut());
+    shifter.whenPressed(new Shift());
+    shifter.whenReleased(new Unshift());
 		//
 		//dhs
 	}

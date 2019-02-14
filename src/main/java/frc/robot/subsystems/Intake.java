@@ -10,6 +10,7 @@
 package frc.robot.subsystems;
 
 
+<<<<<<< HEAD
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -17,8 +18,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.ElevatorControl;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
+=======
+>>>>>>> b530dc747a7af7cc27cbdff5fb2970c2cbebfab5
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
@@ -35,13 +37,17 @@ public class Intake extends Subsystem {
   }
 
   public void intakeIn() {
-		talon1.set(-.4);
-		talon2.set(-.4);
+		talon1.set(-.9);
+		talon2.set(.9);
   }
   
   public void intakeOut() {
-		talon1.set(.3);
-		talon2.set(.3);
+		talon1.set(.4);
+		talon2.set(-.4);
+  }
+  public void Outtakeslow () {
+		talon1.set(-.4);
+		talon2.set(.4);
   }
   public void intakeStop() {
     talon1.set(0);
