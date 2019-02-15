@@ -15,7 +15,6 @@ public class HatchIntake extends Subsystem {
 	public DoubleSolenoid DropperS3;
 	public Solenoid CenterS;
 	public boolean toggleGrab = true;
-	public boolean toggleCenter = true;
 	//private Encoder EncoderCBR;
 	//private double INPUT_Speed = .1;
 
@@ -64,15 +63,13 @@ public class HatchIntake extends Subsystem {
 		}
 	}
 	public void CenterOut(){
-		if(toggleCenter){
 			CenterS.set(true);
-			toggleCenter=false;
 		}
-		if(toggleCenter==false){
+	public void CenterIn(){
 			CenterS.set(false);
-			toggleCenter=true;
+			
 		}
-	}
+	
 	
 	}
 
