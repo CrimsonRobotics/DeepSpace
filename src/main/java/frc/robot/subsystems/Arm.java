@@ -14,6 +14,7 @@ public class Arm extends Subsystem {
 	public int EncPosition;
 	public int max=10000-438;
 	public int min=438;
+	public int variability=500;
 	public int whenStopped;
 	public int Antigrav; 
 	public boolean atRest;
@@ -30,13 +31,13 @@ public class Arm extends Subsystem {
 				atRest=true;
 			}
 			Antigrav=whenStopped-EncPosition;
-			if(Antigrav>500){
+			if(Antigrav>variability){
 				Arm.set(-.2);
 			}
-			if(Antigrav<-500){
+			if(Antigrav<-variability){
 				Arm.set(.2);
 			}
-			if(Antigrav>=-500&&Antigrav<=500){
+			if(Antigrav>=-variability&&Antigrav<=variability){
 				Arm.set(0);
 			}
 			SmartDashboard.putNumber("Antigrav value", Antigrav);
