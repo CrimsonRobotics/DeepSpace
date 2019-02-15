@@ -22,9 +22,9 @@ public class HatchIntake extends Subsystem {
 		//Remember to do the module aswell!
 		
 		ClawS = new Solenoid(mod, Claw);
-		DropperS1 = new DoubleSolenoid(mod,Dropper1,Dropper2);
-		DropperS2 = new DoubleSolenoid(mod, Dropper3, Dropper4);
-		DropperS3 = new DoubleSolenoid(mod, Dropper5, Dropper6);
+		DropperS1 = new DoubleSolenoid(49,Dropper1,Dropper2);
+		DropperS2 = new DoubleSolenoid(49, Dropper3, Dropper4);
+		DropperS3 = new DoubleSolenoid(49, Dropper5, Dropper6);
 		GrabberS1 = new DoubleSolenoid(GrabberID, GrabberID2);
 		GrabberS2 = new DoubleSolenoid(mod,GrabberID3,GrabberID4);
 		CenterS= new Solenoid(mod, Center);

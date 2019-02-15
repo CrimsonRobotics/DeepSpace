@@ -52,6 +52,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
+    Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
+    Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
+    Robot.climber.climberBackRight.setSelectedSensorPosition(0);
     System.out.println("running");
     new Thread(() -> {
       //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
@@ -139,7 +143,7 @@ public class Robot extends TimedRobot {
     }
   }
 
-  /**
+  /** b
    * This function is called periodically during autonomous.
    */
   @Override
@@ -153,13 +157,12 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    Robot.arm.Arm.setSelectedSensorPosition(0);
-    Robot.arm.whenStopped=0;
-
     Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
     Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
     Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
     Robot.climber.climberBackRight.setSelectedSensorPosition(0);
+    Robot.arm.Arm.setSelectedSensorPosition(0);
+    Robot.arm.whenStopped=0;
     Robot.climber.whenStopped=0;
 
 

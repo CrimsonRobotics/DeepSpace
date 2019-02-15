@@ -29,7 +29,7 @@ public class Climber extends Subsystem {
 	public int EncPositionFL;
 	public int EncPositionFR;
 	public int whenStopped;
-	public int Stop = 500;
+	public int Stop = -5000;
 	public double speed = .4;
 
 	public Climber(int climbIDBL, int climbIDBR, int climbIDFL, int climbIDFR, int climbWheelLID, int climbWheelRID){
@@ -48,28 +48,28 @@ public class Climber extends Subsystem {
 		EncPositionFL = climberFrontLeft.getSensorCollection().getQuadraturePosition();
 		EncPositionFR = climberFrontRight.getSensorCollection().getQuadraturePosition();
 		//while(EncPositionBL<500&&EncPositionBR<500&&EncPositionFL<500&&EncPositionFR<500){
-		if(EncPositionBL<Stop){
+		if(EncPositionBL>Stop){
 			climberBackLeft.set(speed);
 		}
 		else{
 			climberBackLeft.set(0);
 		}
 
-		if(EncPositionBR<Stop){
+		if(EncPositionBR>Stop){
 			climberBackRight.set(speed);
 		}
 		else{
 			climberBackRight.set(0);
 		}
 
-		if(EncPositionFL<Stop){
+		if(EncPositionFL>Stop){
 			climberFrontLeft.set(speed);
 		}
 		else{
 			climberFrontLeft.set(0);
 		}
 
-		if(EncPositionFR<Stop){
+		if(EncPositionFR>Stop){
 			climberFrontRight.set(speed);
 		}
 		else{

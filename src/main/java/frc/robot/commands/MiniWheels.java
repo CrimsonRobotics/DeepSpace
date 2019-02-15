@@ -36,6 +36,10 @@ public class MiniWheels extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.climber.MiniWheels(Robot.m_oi.getcoDriver()); 
+        SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
         
             //Timer.delay(10);
            }
