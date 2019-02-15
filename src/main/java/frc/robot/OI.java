@@ -14,11 +14,11 @@ import frc.robot.commands.IntakeStop;
 import frc.robot.commands.Outtakeslow;
 import frc.robot.commands.Shift;
 import frc.robot.commands.Unshift;
-<<<<<<< HEAD
+
 import frc.robot.commands.CenterIn;
-=======
+
 import frc.robot.commands.BackDown;
->>>>>>> 94cac2e7f9284a2401a0908f3c7c4c1cebcb9ef4
+
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;

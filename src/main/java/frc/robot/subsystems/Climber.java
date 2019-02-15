@@ -55,29 +55,12 @@ public class Climber extends Subsystem {
 			climberBackLeft.set(0);
 		}
 
-<<<<<<< HEAD
-			 
-			climberBackLeft.set(.2);
-			climberBackRight.set(-.2);
-			climberFrontLeft.set(.2);
-			climberFrontRight.set(-.2);
-			System.out.println("running");
-	//Timer.delay(10);
-	
-
-		climberBackLeft.set(.1);
-		climberFrontLeft.set(.1);
-		//opposite direction as other two
-		climberFrontRight.set(-.1);
-		climberBackRight.set(-.1);
-=======
 		if(EncPositionBR<Stop){
 			climberBackRight.set(speed);
 		}
 		else{
 			climberBackRight.set(0);
 		}
->>>>>>> 94cac2e7f9284a2401a0908f3c7c4c1cebcb9ef4
 
 		if(EncPositionFL<Stop){
 			climberFrontLeft.set(speed);
