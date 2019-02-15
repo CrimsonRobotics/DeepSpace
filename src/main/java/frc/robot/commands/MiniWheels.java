@@ -13,16 +13,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class ArmWork extends Command {
+public class MiniWheels extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public ArmWork() {
+    public MiniWheels() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.arm);
+        requires(Robot.m_subsystem);
         
-       // WPI_TalonSRX(eL1).set(0.5); 
+       // WPI_TalonSRX(eL1).set(0.5); //?? 
        
    
     }
@@ -35,9 +35,8 @@ public class ArmWork extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.arm.ArmWork(Robot.m_oi.getcoDriver()); 
-        SmartDashboard.putNumber("Encoder Arm", Robot.arm.Arm.getSensorCollection().getQuadraturePosition());  
-        //while (limitSwitch.get()) {
+        Robot.climber.MiniWheels(Robot.m_oi.getcoDriver()); 
+        
             //Timer.delay(10);
            }
     	

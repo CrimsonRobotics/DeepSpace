@@ -20,7 +20,7 @@ public class ClimberUp extends Command {
     public ClimberUp() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.climber);
+        requires(Robot.m_subsystem);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
@@ -39,7 +39,7 @@ public class ClimberUp extends Command {
             //Timer.delay(10);
             SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
             SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
-            SmartDashboard.putNumber("Encoder Back- Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
+            SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
             SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
             //SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
             

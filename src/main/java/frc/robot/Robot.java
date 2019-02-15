@@ -38,7 +38,7 @@ public class Robot extends TimedRobot {
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
   public static final Arm arm = new Arm(RobotMap.arm);
   public static final HatchIntake hatchintake = new HatchIntake(RobotMap.dropperS, RobotMap.grabberS,RobotMap.grabberS2);
-  public static final Climber climber = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
+  public static final Climber climber = new Climber(RobotMap.climberBackLeft,RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight, RobotMap.climberWheelL, RobotMap.climberWheelR); 
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -153,6 +153,14 @@ public class Robot extends TimedRobot {
     // this line or comment it out.
     Robot.arm.Arm.setSelectedSensorPosition(0);
     Robot.arm.whenStopped=0;
+
+    Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
+    Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
+    Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
+    Robot.climber.climberBackRight.setSelectedSensorPosition(0);
+    Robot.climber.whenStopped=0;
+
+
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
