@@ -14,6 +14,7 @@ import frc.robot.commands.IntakeStop;
 import frc.robot.commands.Outtakeslow;
 import frc.robot.commands.Shift;
 import frc.robot.commands.Unshift;
+import frc.robot.commands.CenterIn;
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;
@@ -65,6 +66,7 @@ public class OI {
     dropperButton.whenReleased(new DropperUp());
     grabberButton.whenPressed(new Grab());
     centerButton.whenPressed(new CenterOut());
+    centerButton.whenReleased(new CenterIn());
     shifter.whenPressed(new Shift());
     shifter.whenReleased(new Unshift());
 		//

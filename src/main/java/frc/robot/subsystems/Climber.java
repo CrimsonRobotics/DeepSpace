@@ -44,11 +44,7 @@ public class Climber extends Subsystem {
 			climberFrontRight.set(-.2);
 			System.out.println("running");
 	//Timer.delay(10);
-	//SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
-	//SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
-	//SmartDashboard.putNumber("Encoder Back- Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
-	//SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
-
+	
 
 		climberBackLeft.set(.1);
 		climberFrontLeft.set(.1);
