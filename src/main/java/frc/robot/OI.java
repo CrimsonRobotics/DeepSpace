@@ -14,7 +14,11 @@ import frc.robot.commands.IntakeStop;
 import frc.robot.commands.Outtakeslow;
 import frc.robot.commands.Shift;
 import frc.robot.commands.Unshift;
+<<<<<<< HEAD
 import frc.robot.commands.CenterIn;
+=======
+import frc.robot.commands.BackDown;
+>>>>>>> 94cac2e7f9284a2401a0908f3c7c4c1cebcb9ef4
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;
@@ -24,6 +28,7 @@ import frc.robot.commands.ClawOut;
 import frc.robot.commands.ClimberUp;
 import frc.robot.commands.Drop;
 import frc.robot.commands.DropperUp;
+import frc.robot.commands.FrontDown;
 import frc.robot.commands.Grab;
 
 /**
@@ -40,7 +45,9 @@ public class OI {
 
   private JoystickButton intake = new JoystickButton(coDriver, 2);
   private JoystickButton intake2 = new JoystickButton(coDriver, 1);
-  private JoystickButton climberButton = new JoystickButton(coDriver, 6);
+  private JoystickButton climberButton = new JoystickButton(coDriver, 4);
+  private JoystickButton climberBackDown = new JoystickButton(coDriver,5);
+  private JoystickButton climberFrontDown = new JoystickButton(coDriver,6);
 
   private JoystickButton clawButton = new JoystickButton(coDriver, 7);
   private JoystickButton dropperButton = new JoystickButton(coDriver, 8);
@@ -58,7 +65,11 @@ public class OI {
     intake2.whenReleased(new IntakeStop());
     intake3.whenPressed(new Outtakeslow());
     intake3.whenReleased(new IntakeStop());
+    
+    
     climberButton.whileHeld(new ClimberUp());
+    climberBackDown.whileHeld(new BackDown());
+    climberFrontDown.whileHeld(new FrontDown());
 
     clawButton.whenPressed(new ClawIn());
     clawButton.whenReleased(new ClawOut());

@@ -37,8 +37,10 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
   public static final Arm arm = new Arm(RobotMap.arm);
+ 
+  public static final Climber climber = new Climber(RobotMap.climberBackLeft,RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight, RobotMap.climberWheelL, RobotMap.climberWheelR); 
   public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.dropper1, RobotMap.dropper2,RobotMap.dropper3,RobotMap.dropper4,RobotMap.dropper5,RobotMap.dropper6, RobotMap.grabberS,RobotMap.grabberS2,RobotMap.grabberS3,RobotMap.grabberS4,RobotMap.centerS,RobotMap.clawS);
-  public static final Climber climber = new Climber(RobotMap.climberBackLeft, RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight); 
+  
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -55,17 +57,18 @@ public class Robot extends TimedRobot {
       //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
       //UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
 
-      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(0);
-      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+      UsbCamera camera = CameraServer.getInstance().startAutomaticCapture(0);
+      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(1);
 
+      camera.setResolution(320,240);
       camera1.setResolution(320,240);
-      camera2.setResolution(320,240);
       // might have to drop resolution further during competition
+      camera.setFPS(15);
       camera1.setFPS(15);
-      camera2.setFPS(15);
-      
+
       CvSink cvSink = CameraServer.getInstance().getVideo();
       CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
+      
       
       Mat source = new Mat();
       Mat output = new Mat();
@@ -152,6 +155,14 @@ public class Robot extends TimedRobot {
     // this line or comment it out.
     Robot.arm.Arm.setSelectedSensorPosition(0);
     Robot.arm.whenStopped=0;
+
+    Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
+    Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
+    Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
+    Robot.climber.climberBackRight.setSelectedSensorPosition(0);
+    Robot.climber.whenStopped=0;
+
+
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }

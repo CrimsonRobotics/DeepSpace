@@ -35,18 +35,21 @@ public class RobotMap {
   public static int limitSwitch1= 1;
   public static int limitSwitch2 = 2;
 
-  public static int climberBackRight = 1;
-  public static int climberBackLeft =  2;
+  public static int climberBackRight = 4;
+  public static int climberBackLeft =  3;
   public static int climberFrontRight = 0;
   public static int climberFrontLeft = 0;
 
-  public static int arm = 3;
+  public static int climberWheelL = 0;
+  public static int climberWheelR = 0;
+
+  public static int arm = 0;
   //53
  // public WPI_TalonSRX climberBackLeft;
   //climberBackLeft = new WPI_TalonSRX(3);
 
   public static int intake2 = 55;
-  public static int intake1 = 4;
+  public static int intake1 = 54;
   //54;
   public static int mod = 59;
   public static int clawS = 1;
