@@ -43,8 +43,8 @@ public class OI {
 
   private JoystickButton clawButton = new JoystickButton(coDriver, 7);
   private JoystickButton dropperButton = new JoystickButton(coDriver, 8);
-  private JoystickButton grabberButton = new JoystickButton(coDriver, 9);
-  private JoystickButton centerButton = new JoystickButton(coDriver, 10);
+  private JoystickButton grabberButton = new JoystickButton(coDriver, 10);
+  private JoystickButton centerButton = new JoystickButton(coDriver, 9);
   private JoystickButton shifter = new JoystickButton(driverLeft, 2);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
 
