@@ -20,7 +20,7 @@ public class MiniWheels extends Command {
     public MiniWheels() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.m_subsystem);
+        requires(Robot.climber);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        

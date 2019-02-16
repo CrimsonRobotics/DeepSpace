@@ -15,6 +15,7 @@ public class HatchIntake extends Subsystem {
 	public DoubleSolenoid DropperS3;
 	public Solenoid CenterS;
 	public boolean toggleGrab = true;
+	public boolean toggleCenter = true;
 	//private Encoder EncoderCBR;
 	//private double INPUT_Speed = .1;
 
@@ -22,9 +23,9 @@ public class HatchIntake extends Subsystem {
 		//Remember to do the module aswell!
 		
 		ClawS = new Solenoid(mod, Claw);
-		DropperS1 = new DoubleSolenoid(49,Dropper1,Dropper2);
-		DropperS2 = new DoubleSolenoid(49, Dropper3, Dropper4);
-		DropperS3 = new DoubleSolenoid(49, Dropper5, Dropper6);
+		DropperS1 = new DoubleSolenoid(mod, Dropper1, Dropper2);
+		DropperS2 = new DoubleSolenoid(mod, Dropper3, Dropper4);
+		DropperS3 = new DoubleSolenoid(mod, Dropper5, Dropper6);
 		GrabberS1 = new DoubleSolenoid(GrabberID, GrabberID2);
 		GrabberS2 = new DoubleSolenoid(mod,GrabberID3,GrabberID4);
 		CenterS= new Solenoid(mod, Center);
@@ -63,13 +64,17 @@ public class HatchIntake extends Subsystem {
 		}
 	}
 	public void CenterOut(){
+	
 			CenterS.set(true);
-		}
-	public void CenterIn(){
-			CenterS.set(false);
-			
-		}
-	
-	
+			toggleCenter=false;
 	}
+
+		public void CenterIn(){
+		CenterS.set(false);
+	
+
+		}
+	}
+	
+
 
