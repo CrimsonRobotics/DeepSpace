@@ -7,7 +7,7 @@
 
 package frc.robot;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+//import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -35,7 +35,7 @@ public class RobotMap {
   public static int limitSwitch1= 1;
   public static int limitSwitch2 = 2;
 
-  public static int climberBackRight = 11;
+  public static int climberBackRight = 4;
   public static int climberBackLeft =  3;
   public static int climberFrontRight = 0;
   public static int climberFrontLeft = 0;
@@ -53,17 +53,18 @@ public class RobotMap {
   //54;
   public static int mod = 59;
   public static int clawS = 1;
-  public static int dropper1 = 1;
-  public static int dropper2 = 2;
-  public static int dropper3 = 3;
-  public static int dropper4 = 4;
-  public static int dropper5 = 5;
-  public static int dropper6 = 6;
-  public static int centerS = 2;
-  public static int grabberS = 3;
-  public static int grabberS2 = 4;
-  public static int grabberS3 = 5;
-  public static int grabberS4 = 6;
+  public static int dropper1 = 3;
+  public static int dropper2 = 0;
+  public static int dropper3 = 0;
+  public static int dropper4 = 0;
+  public static int dropper5 = 0;
+  public static int dropper6 = 0;
+  public static int centerS = 3;
+  public static int grabberS = 0;
+  public static int grabberS2 = 1;
+  public static int grabberS3 = 0;
+  public static int grabberS4 = 0;
+  //
   //public static int Shifty = 0;
  // public static int centerS2 = 6;
   // For example to map the left and right motors, you could define the
