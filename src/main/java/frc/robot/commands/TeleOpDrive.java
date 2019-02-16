@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class TeleOpDrive extends Command {
-
+public int Lauren = 1;
     public TeleOpDrive() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -21,7 +21,13 @@ public class TeleOpDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        Lauren++;
         Robot.driveTrain.TeleOpCraneDrive(Robot.m_oi.getDriverLeft(), Robot.m_oi.getDriverRight());
+            SmartDashboard.putBoolean("isFwdLimitSwitchClosed",Robot.climber.climberBackLeft.getSensorCollection().isFwdLimitSwitchClosed());
+
+    //SmartDashboard.putBoolean("LimitBR", Robot.climber.climberLimitBR.get());
+    //SmartDashboard.putBoolean("LimitFL", Robot.climber.climberLimitFL.get());
+    //SmartDashboard.putBoolean("LimitFR", Robot.climber.climberLimitFR.get());
        // SmartDashboard.putNumber("Encoder Front Left", Robot.driveTrain.fL.getSensorCollection().getQuadraturePosition());
        // SmartDashboard.putNumber("Encoder Front Right", Robot.driveTrain.fR.getSensorCollection().getQuadraturePosition());
        // SmartDashboard.putNumber("Encoder Back Left", Robot.driveTrain.bL.getSensorCollection().getQuadraturePosition());
