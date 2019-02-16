@@ -13,6 +13,7 @@ import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
 import frc.robot.commands.Outtakeslow;
 import frc.robot.commands.Shift;
+import frc.robot.commands.StopClimber;
 import frc.robot.commands.Unshift;
 
 import frc.robot.commands.CenterIn;
@@ -68,8 +69,11 @@ public class OI {
     
     
     climberButton.whileHeld(new ClimberUp());
+    climberButton.whenReleased(new StopClimber());
     climberBackDown.whileHeld(new BackDown());
+    climberBackDown.whenReleased(new StopClimber());
     climberFrontDown.whileHeld(new FrontDown());
+    climberFrontDown.whenReleased(new StopClimber());
 
     clawButton.whenPressed(new ClawIn());
     clawButton.whenReleased(new ClawOut());

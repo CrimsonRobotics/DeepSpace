@@ -13,16 +13,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class MiniWheels extends Command {
+public class StopClimber extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public MiniWheels() {
+    public StopClimber() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.climber);
+        requires(Robot.m_subsystem);
         
-       // WPI_TalonSRX(eL1).set(0.5); //?? 
+       // WPI_TalonSRX(eL1).set(0.5); 
        
    
     }
@@ -35,14 +35,9 @@ public class MiniWheels extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.climber.MiniWheels(Robot.m_oi.getcoDriver()); 
-        SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Mini Wheel", Robot.climber.climbWheelL.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Mini Wheel 2", Robot.climber.climbWheelR.getSensorCollection().getQuadraturePosition());    
-        //Timer.delay(10);
+        Robot.climber.StopClimber();
+        //while (limitSwitch.get()) {
+            //Timer.delay(10);
            }
     	
   

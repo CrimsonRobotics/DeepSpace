@@ -34,6 +34,7 @@ import edu.wpi.cscore.UsbCamera;
  */
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  public double antiGravClimber = .05;
   public static OI m_oi;
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
   public static final Arm arm = new Arm(RobotMap.arm);
@@ -157,6 +158,10 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
+   /* Robot.climber.climberFrontRight.set(antiGravClimber);
+    Robot.climber.climberFrontLeft.set(antiGravClimber);
+    Robot.climber.climberBackLeft.set(antiGravClimber);
+    Robot.climber.climberBackRight.set(antiGravClimber);*/
     Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
     Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
     Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
