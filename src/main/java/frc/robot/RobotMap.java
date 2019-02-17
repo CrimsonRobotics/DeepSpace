@@ -20,11 +20,7 @@ public class RobotMap {
 
 
 
-<<<<<<< HEAD
-  public static int DT_FRONTLEFT = 52;
-=======
   public static int DT_FRONTLEFT = 55;
->>>>>>> 36279370f10db272b591e1272f74016bd7139501
 	public static int DT_BACKLEFT = 51;
   public static int DT_FRONTRIGHT = 4;
   public static int DT_BACKRIGHT= 56; 
