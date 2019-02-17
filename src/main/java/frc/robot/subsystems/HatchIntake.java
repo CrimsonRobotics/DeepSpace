@@ -18,15 +18,15 @@ public class HatchIntake extends Subsystem {
 	//private Encoder EncoderCBR;
 	//private double INPUT_Speed = .1;
 
-	public HatchIntake(int mod,int Dropper1,int Dropper2,int Dropper3,int Dropper4,int Dropper5,int Dropper6,int GrabberID, int GrabberID2,int GrabberID3, int GrabberID4, int Center, int Claw){
+	public HatchIntake(int mod,int mod2,int Dropper1,int Dropper2,int Dropper3,int Dropper4,int Dropper5,int Dropper6,int GrabberID, int GrabberID2,int GrabberID3, int GrabberID4, int Center, int Claw){
 		//Remember to do the module aswell!
 		
 		ClawS = new Solenoid(mod, Claw);
-		DropperS1 = new DoubleSolenoid(49,Dropper1,Dropper2);
-		DropperS2 = new DoubleSolenoid(49, Dropper3, Dropper4);
-		DropperS3 = new DoubleSolenoid(49, Dropper5, Dropper6);
-		GrabberS1 = new DoubleSolenoid(GrabberID, GrabberID2);
-		GrabberS2 = new DoubleSolenoid(mod,GrabberID3,GrabberID4);
+		DropperS1 = new DoubleSolenoid(mod2,Dropper1,Dropper2);
+		DropperS2 = new DoubleSolenoid(mod, Dropper3, Dropper4);
+		DropperS3 = new DoubleSolenoid(mod, Dropper5, Dropper6);
+		GrabberS1 = new DoubleSolenoid(mod2,GrabberID, GrabberID2);
+		GrabberS2 = new DoubleSolenoid(mod2,GrabberID3,GrabberID4);
 		CenterS= new Solenoid(mod, Center);
 		
 	}

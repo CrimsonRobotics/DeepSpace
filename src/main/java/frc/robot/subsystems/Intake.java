@@ -27,17 +27,17 @@ public class Intake extends Subsystem {
   }
 
   public void intakeIn() {
-		talon1.set(-.9);
-		talon2.set(.9);
+		talon1.set(-.4);
+		talon2.set(.4);
   }
   
   public void intakeOut() {
-		talon1.set(.4);
-		talon2.set(-.4);
+		talon1.set(.9);
+		talon2.set(-.9);
   }
   public void Outtakeslow () {
-		talon1.set(-.4);
-		talon2.set(.4);
+		talon1.set(.4);
+		talon2.set(-.4);
   }
   public void intakeStop() {
     talon1.set(0);

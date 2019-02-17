@@ -37,10 +37,10 @@ public class Robot extends TimedRobot {
   public double antiGravClimber = .05;
   public static OI m_oi;
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
-  public static final Arm arm = new Arm(RobotMap.arm);
+  public static final Arm arm = new Arm(RobotMap.arm, RobotMap.ArmShifter);
  
   public static final Climber climber = new Climber(RobotMap.climberBackLeft,RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight, RobotMap.climberWheelL, RobotMap.climberWheelR); 
-  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.dropper1, RobotMap.dropper2,RobotMap.dropper3,RobotMap.dropper4,RobotMap.dropper5,RobotMap.dropper6, RobotMap.grabberS,RobotMap.grabberS2,RobotMap.grabberS3,RobotMap.grabberS4,RobotMap.centerS,RobotMap.clawS);
+  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.mod2, RobotMap.dropper1, RobotMap.dropper2,RobotMap.dropper3,RobotMap.dropper4,RobotMap.dropper5,RobotMap.dropper6, RobotMap.grabberS,RobotMap.grabberS2,RobotMap.grabberS3,RobotMap.grabberS4,RobotMap.centerS,RobotMap.clawS);
   
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
   Command m_autonomousCommand;

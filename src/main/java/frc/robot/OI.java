@@ -17,14 +17,12 @@ import frc.robot.commands.StopClimber;
 import frc.robot.commands.Unshift;
 
 import frc.robot.commands.CenterIn;
-
+import frc.robot.commands.ArmShift;
 import frc.robot.commands.BackDown;
 
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;
-
-//import edu.wpi.first.wpilibj.buttons;
 
 import frc.robot.commands.ClimberUp;
 import frc.robot.commands.Drop;
@@ -56,6 +54,7 @@ public class OI {
   private JoystickButton centerButton = new JoystickButton(coDriver, 9);
   private JoystickButton shifter = new JoystickButton(driverLeft, 2);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
+  private JoystickButton armShifter = new JoystickButton(coDriver, 11);
 
   //
   public OI() {
@@ -84,6 +83,7 @@ public class OI {
     centerButton.whenReleased(new CenterIn());
     shifter.whenPressed(new Shift());
     shifter.whenReleased(new Unshift());
+    armShifter.whenPressed(new ArmShift());
 		//
 		//dhs
 	}
