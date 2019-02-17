@@ -23,7 +23,14 @@ public int Lauren = 1;
     protected void execute() {
         Lauren++;
         Robot.driveTrain.TeleOpCraneDrive(Robot.m_oi.getDriverLeft(), Robot.m_oi.getDriverRight());
-            SmartDashboard.putBoolean("isFwdLimitSwitchClosed",Robot.climber.climberBackLeft.getSensorCollection().isFwdLimitSwitchClosed());
+            SmartDashboard.putBoolean("BLisFwdLimitSwitchClosed",Robot.climber.climberBackLeft.getSensorCollection().isFwdLimitSwitchClosed());
+            SmartDashboard.putBoolean("BLisRevLimitSwitchClosed",Robot.climber.climberBackLeft.getSensorCollection().isRevLimitSwitchClosed());
+            SmartDashboard.putBoolean("BRisFwdLimitSwitchClosed",Robot.climber.climberBackRight.getSensorCollection().isFwdLimitSwitchClosed());
+            SmartDashboard.putBoolean("BRisRevLimitSwitchClosed",Robot.climber.climberBackRight.getSensorCollection().isRevLimitSwitchClosed());
+            SmartDashboard.putBoolean("FLisFwdLimitSwitchClosed",Robot.climber.climberFrontLeft.getSensorCollection().isFwdLimitSwitchClosed());
+            SmartDashboard.putBoolean("FLisRevLimitSwitchClosed",Robot.climber.climberFrontLeft.getSensorCollection().isRevLimitSwitchClosed());
+            SmartDashboard.putBoolean("FRisFwdLimitSwitchClosed",Robot.climber.climberFrontRight.getSensorCollection().isFwdLimitSwitchClosed());
+            SmartDashboard.putBoolean("FRisRevLimitSwitchClosed",Robot.climber.climberFrontRight.getSensorCollection().isRevLimitSwitchClosed());
 
     //SmartDashboard.putBoolean("LimitBR", Robot.climber.climberLimitBR.get());
     //SmartDashboard.putBoolean("LimitFL", Robot.climber.climberLimitFL.get());
