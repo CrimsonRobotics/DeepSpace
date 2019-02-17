@@ -44,7 +44,6 @@ public class RobotMap {
   public static int mod = 59;
   public static int mod2 = 60;
   public static int clawS = 1;
-<<<<<<< HEAD
   public static int dropper1 = 1;
   public static int dropper2 = 2;
   public static int dropper3 = 3;
@@ -57,20 +56,6 @@ public class RobotMap {
   public static int grabberS3 = 5;
   public static int grabberS4 = 6;
   public static int ArmShifter = 7;
-=======
-  public static int dropper1 = 3;
-  public static int dropper2 = 0;
-  public static int dropper3 = 0;
-  public static int dropper4 = 0;
-  public static int dropper5 = 0;
-  public static int dropper6 = 0;
-  public static int centerS = 3;
-  public static int grabberS = 0;
-  public static int grabberS2 = 1;
-  public static int grabberS3 = 0;
-  public static int grabberS4 = 0;
-  //
->>>>>>> a0ef1450e8a29dfdd76d9f0fc1b849ef801262fc
   //public static int Shifty = 0;
  // public static int centerS2 = 6;
   // For example to map the left and right motors, you could define the
