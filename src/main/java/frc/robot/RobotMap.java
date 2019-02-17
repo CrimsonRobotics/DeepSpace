@@ -21,7 +21,6 @@ public class RobotMap {
 
 
   public static int DT_FRONTLEFT = 52;
-  //52;
 	public static int DT_BACKLEFT = 51;
 	public static int DT_FRONTRIGHT = 57;
   public static int DT_BACKRIGHT= 58; 
