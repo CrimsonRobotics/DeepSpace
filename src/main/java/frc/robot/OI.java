@@ -55,6 +55,7 @@ public class OI {
   private JoystickButton shifter = new JoystickButton(driverLeft, 2);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
   private JoystickButton armShifter = new JoystickButton(coDriver, 11);
+  private JoystickButton armShiter2 = new JoystickButton(coDriver, 12);
 
   //
   public OI() {

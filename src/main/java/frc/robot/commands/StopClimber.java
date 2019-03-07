@@ -21,6 +21,10 @@ public class StopClimber extends Command {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
         requires(Robot.m_subsystem);
+        SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
+        SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
         
        // WPI_TalonSRX(eL1).set(0.5); 
        
