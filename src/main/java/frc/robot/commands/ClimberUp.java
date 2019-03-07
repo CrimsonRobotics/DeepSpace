@@ -35,7 +35,8 @@ public class ClimberUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.climber.ClimberUp();    	//while (limitSwitch.get()) {
+        Robot.climber.ClimberUp(Robot.m_oi.getcoDriver());  
+         	//while (limitSwitch.get()) {
             //Timer.delay(10);
             SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
             SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());

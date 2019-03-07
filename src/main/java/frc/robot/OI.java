@@ -55,6 +55,7 @@ public class OI {
   private JoystickButton shifter = new JoystickButton(driverLeft, 2);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
   private JoystickButton armShifter = new JoystickButton(coDriver, 11);
+  private JoystickButton armShifter2 = new JoystickButton(coDriver,12);
 
   //
   public OI() {
@@ -83,7 +84,7 @@ public class OI {
     centerButton.whenReleased(new CenterIn());
     shifter.whenPressed(new Shift());
     shifter.whenReleased(new Unshift());
-    armShifter.whenPressed(new ArmShift());
+    armShifter.toggleWhenPressed(new ArmShift());
 		//
 		//dhs
 	}

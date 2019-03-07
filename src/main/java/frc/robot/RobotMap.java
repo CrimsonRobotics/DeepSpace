@@ -20,42 +20,44 @@ public class RobotMap {
 
 
 
-  public static int DT_FRONTLEFT = 55;
-	public static int DT_BACKLEFT = 51;
-  public static int DT_FRONTRIGHT = 4;
-  public static int DT_BACKRIGHT= 56; 
+  public static int DT_FRONTLEFT = 6;
+	public static int DT_BACKLEFT = 5;
+  public static int DT_FRONTRIGHT = 2;
+  public static int DT_BACKRIGHT= 1; 
 
-  public static int climberBackRight = 0;
-  public static int climberBackLeft =  4;
-  public static int climberFrontRight = 0;
-  public static int climberFrontLeft = 0;
+  public static int climberBackRight = 12;
+  public static int climberBackLeft =  11;
+  public static int climberFrontRight = 4;
+  public static int climberFrontLeft = 8;
 
-  public static int climberWheelL = 0;
-  public static int climberWheelR = 3;
+  public static int climberWheelL = 9;
+  public static int climberWheelR = 10;
 
-  public static int arm = 2;
+  public static int arm = 13;
   //53
  // public WPI_TalonSRX climberBackLeft;
   //climberBackLeft = new WPI_TalonSRX(3);
 
-  public static int intake2 = 8;
+  public static int intake2 = 3;
   public static int intake1 = 7;
   //54;
-  public static int mod = 59;
-  public static int mod2 = 60;
-  public static int clawS = 1;
-  public static int dropper1 = 1;
-  public static int dropper2 = 2;
-  public static int dropper3 = 3;
-  public static int dropper4 = 4;
-  public static int dropper5 = 5;
-  public static int dropper6 = 6;
+  public static int mod = 0;
+  public static int mod2 = 59;
+  public static int clawS1 = 1;//mod2
+  public static int clawS2 = 0;//double
+  //public static int dropper1 = 1;
+  //public static int dropper2 = 2;
+  //public static int dropper3 = 3;
+  //public static int dropper4 = 4;
+  //public static int dropper5 = 5;
+  //public static int dropper6 = 6;
   public static int centerS = 2;
-  public static int grabberS = 3;
-  public static int grabberS2 = 4;
-  public static int grabberS3 = 5;
-  public static int grabberS4 = 6;
-  public static int ArmShifter = 7;
+  //public static int grabberS = 3;
+  //public static int grabberS2 = 4;
+  //public static int grabberS3 = 5;
+  //public static int grabberS4 = 6;
+  public static int ArmShifter = 0;//mod1
+  public static int ArmShifter2 = 1;//mod1
   //public static int Shifty = 0;
  // public static int centerS2 = 6;
   // For example to map the left and right motors, you could define the

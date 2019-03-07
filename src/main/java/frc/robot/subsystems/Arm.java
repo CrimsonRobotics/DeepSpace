@@ -2,8 +2,10 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ArmWork;
@@ -13,18 +15,18 @@ import frc.robot.commands.ArmWork;
 public class Arm extends Subsystem {
 	public WPI_TalonSRX Arm;
 	public int EncPosition;
-	public int max=10000-438;
-	public int min=438;
-	public int variability=500;
+	public int max=3920;
+	public int min=100;
+	public int variability=100;
 	public int whenStopped;
 	public int Antigrav; 
 	public boolean atRest;
-	public Solenoid shifter;
+	public DoubleSolenoid shifter;
 	public boolean shiftToggle=false;
 
-	public Arm(int armID, int shiftID){
+	public Arm(int mod2, int armID, int shiftID, int shiftID2){
 		Arm = new WPI_TalonSRX(armID);
-		shifter = new Solenoid(59,shiftID);
+		shifter = new DoubleSolenoid(mod2,shiftID,shiftID2);
 	}
 	public void ArmWork(Joystick Driver){
 		EncPosition = Arm.getSensorCollection().getQuadraturePosition();
@@ -53,33 +55,33 @@ public class Arm extends Subsystem {
 				atRest=false;
 			}
 			else{
-				if(Driver.getY()<0){
+				if(Driver.getY()>0){
 					Arm.set(.4*Driver.getY());
 					atRest=false;
 				}
 				else{
-					Arm.set(0); 
+					Arm.set(.2); 
 				}
 			}
 		}
 		else{
-			if(Driver.getY()>0){
+			if(Driver.getY()<0){
 				Arm.set(.4*Driver.getY());
 				atRest=false;
 			}
 		else{
-			Arm.set(0);
+			Arm.set(.2);
 		}
 	}
 	}
 }
 	public void ArmShift(){
 		if(shiftToggle){
-			shifter.set(true);
+			shifter.set(Value.kReverse);
 			shiftToggle=false;
 		}
-		if(shiftToggle==false){
-			shifter.set(false);
+		else if(shiftToggle==false ){
+			shifter.set(Value.kForward);
 			shiftToggle=true;
 		}
 	} 

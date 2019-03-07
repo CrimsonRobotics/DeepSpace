@@ -37,10 +37,10 @@ public class Robot extends TimedRobot {
   public double antiGravClimber = .05;
   public static OI m_oi;
   public static final Intake intake = new Intake(RobotMap.intake1, RobotMap.intake2);
-  public static final Arm arm = new Arm(RobotMap.arm, RobotMap.ArmShifter);
+  public static final Arm arm = new Arm(RobotMap.mod2, RobotMap.arm, RobotMap.ArmShifter, RobotMap.ArmShifter2);
  
   public static final Climber climber = new Climber(RobotMap.climberBackLeft,RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight, RobotMap.climberWheelL, RobotMap.climberWheelR); 
-  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.mod2, RobotMap.dropper1, RobotMap.dropper2,RobotMap.dropper3,RobotMap.dropper4,RobotMap.dropper5,RobotMap.dropper6, RobotMap.grabberS,RobotMap.grabberS2,RobotMap.grabberS3,RobotMap.grabberS4,RobotMap.centerS,RobotMap.clawS);
+  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.mod2,RobotMap.centerS,RobotMap.clawS1, RobotMap.clawS2);
   
   public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
   Command m_autonomousCommand;
@@ -168,7 +168,10 @@ public class Robot extends TimedRobot {
     Robot.climber.climberBackRight.setSelectedSensorPosition(0);
     Robot.arm.Arm.setSelectedSensorPosition(0);
     Robot.arm.whenStopped=0;
-    Robot.climber.whenStopped=0;
+    Robot.climber.whenStoppedBL=0;
+    Robot.climber.whenStoppedBR=0;
+    Robot.climber.whenStoppedFL=0;
+    Robot.climber.whenStoppedFR=0;
 
 
     if (m_autonomousCommand != null) {
