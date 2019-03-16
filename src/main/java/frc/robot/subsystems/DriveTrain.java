@@ -1,5 +1,7 @@
 package frc.robot.subsystems;
 
+import frc.robot.OI;
+import frc.robot.Robot;
 import frc.robot.commands.TeleOpDrive;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -7,8 +9,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -34,7 +38,7 @@ public class DriveTrain extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-	public DriveTrain(int fLID, int bLID, int fRID, int bRID){ 
+	public DriveTrain(int fLID, int bLID, int fRID, int bRID, int Shiftyid, int Shifty2id, int mod, int mod2){ 
 	
 		//this method was pulled from Robot.java and is how everything connects 
 		
@@ -42,8 +46,8 @@ public class DriveTrain extends Subsystem {
 		bL = new WPI_TalonSRX(bLID);
 		fR = new WPI_TalonSRX(fRID);
 		bR = new WPI_TalonSRX(bRID);
-		Shifty = new Solenoid(0, 3);
-		Shifty2 = new Solenoid(0,4);
+		Shifty = new Solenoid(mod, Shiftyid);
+		Shifty2 = new Solenoid(mod2,Shifty2id);
 		//notShifty = new Solenoid(0);
 		//bL.setSensorPhase(true);
 		//talons are connected to actual IDs via the constructor
@@ -69,7 +73,8 @@ public class DriveTrain extends Subsystem {
 	
 	public void TeleOpCraneDrive(Joystick left, Joystick right){
 		
-	 	drive.arcadeDrive(left.getY(), right.getX(), true);
+		 drive.arcadeDrive(left.getY(), -right.getX(), true);
+		 SmartDashboard.putBoolean("Shift status", Robot.m_oi.getDriverLeft().getRawButton(1));
 		
 	}
 	public void Shift(){

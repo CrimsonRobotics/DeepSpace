@@ -17,15 +17,15 @@ public class ClimberUp extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public ClimberUp() {
+    //public ClimberUp() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.m_subsystem);
+        //requires(Robot.m_subsystem);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
    
-    }
+    //}
 
     // Called just before this Command runs the first time
     protected void initialize() {

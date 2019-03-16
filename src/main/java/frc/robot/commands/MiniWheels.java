@@ -36,12 +36,25 @@ public class MiniWheels extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.climber.MiniWheels(Robot.m_oi.getcoDriver()); 
+        SmartDashboard.putNumber("Speed Front Left", Robot.climber.climberFrontLeft.get());
+        SmartDashboard.putNumber("Speed Front Right", Robot.climber.climberFrontRight.get());
+        SmartDashboard.putNumber("Speed Back Left", Robot.climber.climberBackLeft.get());
+        SmartDashboard.putNumber("Speed Back Right", Robot.climber.climberBackRight.get());
+        
         SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Mini Wheel", Robot.climber.climbWheelL.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Mini Wheel 2", Robot.climber.climbWheelR.getSensorCollection().getQuadraturePosition());    
+        
+        SmartDashboard.putBoolean("@target Front Left", Robot.climber.nextPositionFL);
+        SmartDashboard.putBoolean("@target Front Right", Robot.climber.nextPositionFR);
+        SmartDashboard.putBoolean("@target Back Left", Robot.climber.nextPositionBL);
+        SmartDashboard.putBoolean("@target Back Right", Robot.climber.nextPositionBR);
+        SmartDashboard.putNumber("Final Target", Robot.climber.levelThreeTarget);
+        SmartDashboard.putNumber("Current Target", Robot.climber.stepTarget);
+        
         //Timer.delay(10);
            }
     	

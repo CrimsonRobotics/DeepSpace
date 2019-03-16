@@ -6,6 +6,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import frc.robot.commands.ClimberTestUp;
 import frc.robot.commands.MiniWheels;
 
 
@@ -30,12 +31,26 @@ public class Climber extends Subsystem {
 	public int whenStoppedFL;
 	public int whenStoppedFR;
 	public int Stop = 15000;
-	public double speed1 = -.3;
-	public double speed2 = -.3;
-	public double speed3 = -.33;
-	public double speed4 = -.4;
-	public double wheelSpeed = .5;
+	public double speedbl = -.3;
+	public double speedbr = -.34;
+	public double speedfr = -.39;
+	public double speedfl = -.45;
+	public double FrontDownSpeed = -.2;
+	public double BackDownSpeed = -.25;
+	public double holdbl = -.12;
+	public double holdbr = -.12;
+	public double holdfl = -.22;
+	public double holdfr = -.22;
+	public double holdingfl = 0;
+	public double holdingfr = 0;
+	public double holdingbl = 0;
+	public double holdingbr = 0; 
+	public double wheelSpeed = .3;
 	public boolean atRest = true;
+	public boolean nextPositionBR = false;
+	public boolean nextPositionBL = false;
+	public boolean nextPositionFR = false;
+	public boolean nextPositionFL = false;
 	public int antiGravBL;
 	public int antiGravBR;
 	public int antiGravFL;
@@ -44,6 +59,10 @@ public class Climber extends Subsystem {
 	public boolean turnAntigravOn= true;
 	public int isStopped=0;
 	public boolean GRatedStop;
+	public int levelThreeTarget = 27000;
+	public int stepTarget;
+	public int stepIncriment = 2500;
+	public int softwareLimit = 1500;
 
 
 	public Climber(int climbIDBL, int climbIDBR, int climbIDFL, int climbIDFR, int climbWheelLID, int climbWheelRID){
@@ -65,32 +84,32 @@ public class Climber extends Subsystem {
 		EncPositionFL = climberFrontLeft.getSensorCollection().getQuadraturePosition();
 		EncPositionFR = climberFrontRight.getSensorCollection().getQuadraturePosition();
 		//while(EncPositionBL<500&&EncPositionBR<500&&EncPositionFL<500&&EncPositionFR<500){
-		if(Math.abs(EncPositionBL)<Stop){
+		/*if(Math.abs(EncPositionBL)<Stop){
 			climberBackLeft.set(-speed1);
 		}
 		else{
-			climberBackLeft.set(0);
+			climberBackLeft.set(holdbl);
 		}
 
-		if(Math.abs(EncPositionBR)<Stop){
-			climberBackRight.set(speed2);
-		}
+		if(Math.abs(EncPositionBR)<90 Stop){
+			climberBackRight.set(spe09ed2);
+		}09
 		else{
-			climberBackRight.set(0);
+			climberBackRight.set(holdbr);
 		}
 
 		if(Math.abs(EncPositionFL)<Stop){
 			climberFrontLeft.set(speed4);
 		}
 		else{
-			climberFrontLeft.set(0);
+			climberFrontLeft.set(holdfl);
 		}
 
 		if(Math.abs(EncPositionFR)<Stop){
 			climberFrontRight.set(-speed3);
 		}
 		else{
-			climberFrontRight.set(0);
+			climberFrontRight.set(holdfr);
 		}
 		if(CoDriver.getX()>.2){
 			Robot.arm.Arm.set(0);
@@ -101,7 +120,12 @@ public class Climber extends Subsystem {
 			climbWheelL.set(0);
 			climbWheelR.set(0) ;
 		}
+		*/
 	//}
+	climberFrontRight.set(-speedfr);
+	climberFrontLeft.set(speedfl);
+	climberBackRight.set(speedbr);
+	climberBackLeft.set(-speedbl);
 	}
 	public void FrontDown(){
 		turnAntigravOn= false;
@@ -112,42 +136,45 @@ public class Climber extends Subsystem {
 		EncPositionBR = climberBackRight.getSensorCollection().getQuadraturePosition();
 		LimPositionFL= climberFrontLeft.getSensorCollection().isFwdLimitSwitchClosed();
 		LimPositionFR= climberFrontRight.getSensorCollection().isFwdLimitSwitchClosed();
-
-		if(LimPositionFR==true){
-			climberFrontRight.set(0);
+		climberFrontRight.set(speedfr);
+		climberFrontLeft.set(-speedfl);
+		climberBackLeft.set(-speedbl);
+		climberBackRight.set(speedbr);
+		/*if(LimPositionFR==true){
+			climberFrontRight.set(holdingfr);
 		}
 		else{
 			if(-EncPositionFR>0){
 				climberFrontRight.set(speed3);
 			}
 			else{
-				climberFrontRight.set(0);
+				climberFrontRight.set(holdingfr);
 			}
 		}
 		if(LimPositionFL==true){
-			climberFrontLeft.set(0);
+			climberFrontLeft.set(holdingfl);
 		}
 		else{
 			if(EncPositionFL>0){
 				climberFrontLeft.set(-speed4);
 			}
 			else{
-				climberFrontLeft.set(0);
+				climberFrontLeft.set(holdingfl);
 			}
 		}
 		if(Math.abs(EncPositionBL)<Stop){
 			climberBackLeft.set(-speed1);
 		}
 		else{
-			climberBackLeft.set(0);
+			climberBackLeft.set(holdbl);
 		}
 
 		if(Math.abs(EncPositionBR)<Stop){
 			climberBackRight.set(speed2);
 		}
 		else{
-			climberBackRight.set(0);
-		}
+			climberBackRight.set(holdbr);
+		}*/
 	}
 	public void BackDown(){
 		turnAntigravOn= false;
@@ -157,25 +184,25 @@ public class Climber extends Subsystem {
 		LimPositionBL= climberBackLeft.getSensorCollection().isFwdLimitSwitchClosed();
 		LimPositionBR= climberBackRight.getSensorCollection().isFwdLimitSwitchClosed();
 		if(LimPositionBR==true){
-			climberBackRight.set(0);
+			climberBackRight.set(holdingbr);
 		}
 		else{
 			if(-EncPositionBR>0){
-				climberBackRight.set(-speed2);
+				climberBackRight.set(-speedbr);
 			}
 			else{
-				climberBackRight.set(0);
+				climberBackRight.set(holdingbr);
 			}
 		}
 		if(LimPositionBL==true){
-			climberBackLeft.set(0);
+			climberBackLeft.set(holdingbl);
 		}
 		else{
 			if(EncPositionBL>0){
-				climberBackLeft.set(speed1);
+				climberBackLeft.set(speedbl);
 			}
 			else{
-				climberBackLeft.set(0);
+				climberBackLeft.set(holdingbl);
 			}
 		}
 		
@@ -252,6 +279,128 @@ public class Climber extends Subsystem {
 }*/
 	SmartDashboard.putNumber("Antigrav climber",antiGravBL);
 		
+	}
+	public void ClimberTestUp(){
+		EncPositionBL = climberBackLeft.getSensorCollection().getQuadraturePosition();
+		EncPositionBR = climberBackRight.getSensorCollection().getQuadraturePosition();
+		EncPositionFL = climberFrontLeft.getSensorCollection().getQuadraturePosition();
+		EncPositionFR = climberFrontRight.getSensorCollection().getQuadraturePosition();
+
+		if(nextPositionBL==false||nextPositionBR==false||nextPositionFL==false||nextPositionFR==false){
+		if(-EncPositionBR<stepTarget){
+			climberBackRight.set(speedbr);	
+		}
+		else{
+			climberBackRight.set(holdbr);
+			nextPositionBR=true;
+		}
+		if(EncPositionBL<stepTarget){
+			climberBackLeft.set(-speedbl);	
+		}
+			else {
+			climberBackLeft.set(-holdbl);
+			nextPositionBL=true;
+		}
+		if(-EncPositionFR<stepTarget){
+			climberFrontRight.set(-speedfr);	
+		}
+		else{
+			climberFrontRight.set(-holdfr);
+			nextPositionFR=true;
+		}
+		if(EncPositionFL<stepTarget){
+			climberFrontLeft.set(speedfl);	
+		}
+		else{
+			climberFrontLeft.set(holdfl);
+			nextPositionFL=true;
+		}
+		}
+
+		else{
+			if(EncPositionBL<levelThreeTarget){
+				stepTarget+=stepIncriment;
+				nextPositionBL=false;
+				nextPositionBR=false;
+				nextPositionFL=false;
+				nextPositionFR=false;
+			}
+		}
+		
+	}
+	public void ClimberTestDown(){
+		climberBackRight.set(-speedbr);
+		climberBackLeft.set(speedbl);
+		climberFrontLeft.set(-speedfl);
+		climberFrontRight.set(speedfr);
+	}
+	public void ClimberTestHold(){
+		climberBackRight.set(holdbr);
+		climberBackLeft.set(-holdbl);
+		climberFrontRight.set(-holdfr);
+		climberFrontLeft.set(holdfl);
+	}
+	public void ClimberTestStop(){
+		climberBackRight.set(0);
+		climberBackLeft.set(0);
+		climberFrontRight.set(0);
+		climberFrontLeft.set(0);
+	}	
+	public void ClimberTestFrontUp(){
+		climberFrontLeft.set(speedfl);
+		climberFrontRight.set(-speedfr);
+	}
+	public void ClimberTestFrontDown(){
+		EncPositionFL = climberFrontLeft.getSensorCollection().getQuadraturePosition();
+		EncPositionFR = climberFrontRight.getSensorCollection().getQuadraturePosition();
+		if(EncPositionFL<softwareLimit){
+			climberFrontLeft.set(0);
+		}
+		else{
+		climberFrontLeft.set(-FrontDownSpeed);
+		}
+		if(-EncPositionFR<softwareLimit){
+			climberFrontRight.set(0);
+		}
+		else{
+		climberFrontRight.set(FrontDownSpeed);
+		}
+	}
+	public void ClimberTestFrontStop(){
+		climberFrontLeft.set(0);
+		climberFrontRight.set(0);
+	}
+	public void ClimberTestBackUp(){
+		climberBackLeft.set(speedbl);
+		climberBackRight.set(-speedbr);
+	}
+	public void ClimberTestBackDown(){
+		EncPositionBL = climberBackLeft.getSensorCollection().getQuadraturePosition();
+		EncPositionBR = climberBackRight.getSensorCollection().getQuadraturePosition();
+		if(EncPositionBL<softwareLimit){
+			climberBackLeft.set(0);
+		}
+		else{
+		climberBackLeft.set(BackDownSpeed);
+		}
+		if(-EncPositionBR<softwareLimit){
+			climberBackRight.set(0);
+		}
+		else{
+		climberBackRight.set(-BackDownSpeed);
+		}
+	}
+	public void ClimberTestBackStop(){
+		climberBackLeft.set(0);
+		climberBackRight.set(0);
+	}
+	public void MiniWheelTest(){
+		climbWheelL.set(-wheelSpeed);
+		climbWheelR.set(wheelSpeed);
+	}
+	public void MiniWheelStopTest(){
+		climbWheelL.set(0);
+		climbWheelR.set(0);
 	}
 	@Override
 	protected void initDefaultCommand() {

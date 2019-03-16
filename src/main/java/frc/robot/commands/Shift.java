@@ -17,15 +17,15 @@ public class Shift extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public Shift() {
+   // public Shift() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.driveTrain);
+        //requires(Robot.driveTrain);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        
    
-    }
+    //}
 
     // Called just before this Command runs the first time
     protected void initialize() {
@@ -44,7 +44,7 @@ public class Shift extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

@@ -20,7 +20,7 @@ public class Grab extends Command {
     public Grab() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.hatchintake);
+        //requires(Robot.hatchintake);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        

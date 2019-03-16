@@ -40,9 +40,8 @@ public class Robot extends TimedRobot {
   public static final Arm arm = new Arm(RobotMap.mod2, RobotMap.arm, RobotMap.ArmShifter, RobotMap.ArmShifter2);
  
   public static final Climber climber = new Climber(RobotMap.climberBackLeft,RobotMap.climberBackRight, RobotMap.climberFrontLeft, RobotMap.climberFrontRight, RobotMap.climberWheelL, RobotMap.climberWheelR); 
-  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.mod2,RobotMap.centerS,RobotMap.clawS1, RobotMap.clawS2);
-  
-  public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT);
+  public static final HatchIntake hatchintake = new HatchIntake(RobotMap.mod, RobotMap.mod2,RobotMap.centerS, RobotMap.centerS2, RobotMap.clawS1, RobotMap.clawS2);
+  public static final DriveTrain driveTrain = new DriveTrain(RobotMap.DT_FRONTLEFT, RobotMap.DT_BACKLEFT, RobotMap.DT_FRONTRIGHT, RobotMap.DT_BACKRIGHT, RobotMap.Shifty, RobotMap.Shifty2, RobotMap.mod, RobotMap.mod2);
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -53,10 +52,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
-    Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
-    Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
-    Robot.climber.climberBackRight.setSelectedSensorPosition(0);
     System.out.println("running");
     new Thread(() -> {
       //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
@@ -172,6 +167,13 @@ public class Robot extends TimedRobot {
     Robot.climber.whenStoppedBR=0;
     Robot.climber.whenStoppedFL=0;
     Robot.climber.whenStoppedFR=0;
+    Robot.climber.climberFrontRight.set(0);
+    Robot.climber.climberFrontLeft.set(0);
+    Robot.climber.climberBackLeft.set(0);
+    Robot.climber.climberBackRight.set(0);
+    Robot.climber.climbWheelL.set(0);
+    Robot.climber.climbWheelR.set(0);
+    Robot.climber.stepTarget = Robot.climber.stepIncriment;
 
 
     if (m_autonomousCommand != null) {
