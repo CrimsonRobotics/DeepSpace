@@ -1,18 +1,10 @@
 package frc.robot.commands;
-<<<<<<< Updated upstream:src/main/java/frc/robot/commands/Grab.java
-
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import frc.robot.Robot;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-=======
 //import edu.wpi.first.wpilibj.PWMTalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 //import edu.wpi.first.wpilibj.command.Command;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
->>>>>>> Stashed changes:src/main/java/frc/robot/commands/ElevatorControl.java
 
 //import edu.wpi.first.wpilibj.command.Command;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;

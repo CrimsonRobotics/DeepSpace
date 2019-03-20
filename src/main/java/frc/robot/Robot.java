@@ -18,16 +18,7 @@ import frc.robot.subsystems.HatchIntake;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Intake;
-<<<<<<< Updated upstream
-import edu.wpi.cscore.CvSource;
 import edu.wpi.first.cameraserver.*;
-import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.UsbCamera;
-=======
-import edu.wpi.first.cameraserver.*;
->>>>>>> Stashed changes
 //import edu.wpi.first.wpilibj.IterativeRobot;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -57,42 +48,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-<<<<<<< Updated upstream
-    Robot.climber.climberFrontRight.setSelectedSensorPosition(0);
-    Robot.climber.climberFrontLeft.setSelectedSensorPosition(0);
-    Robot.climber.climberBackLeft.setSelectedSensorPosition(0);
-    Robot.climber.climberBackRight.setSelectedSensorPosition(0);
-    System.out.println("running");
-    new Thread(() -> {
-      //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
-      //UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
-
-      UsbCamera camera = CameraServer.getInstance().startAutomaticCapture(0);
-      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(1);
-
-      camera.setResolution(320,240);
-      camera1.setResolution(320,240);
-      // might have to drop resolution further during competition
-      camera.setFPS(15);
-      camera1.setFPS(15);
-
-      CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
-      
-      
-      Mat source = new Mat();
-      Mat output = new Mat();
-      
-      while(!Thread.interrupted()) {
-          cvSink.grabFrame(source);
-          Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-          outputStream.putFrame(output);
-      }
-  }).start();
-    
-=======
     CameraServer.getInstance().startAutomaticCapture();
->>>>>>> Stashed changes
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
