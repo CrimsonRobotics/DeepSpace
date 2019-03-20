@@ -20,6 +20,7 @@ public class DriveTrain extends Subsystem {
 	public WPI_TalonSRX fR;
 	public WPI_TalonSRX bR;
 	public Solenoid Shifty;
+	public Solenoid Shifty2;
 	//public Solenoid notShifty;
 	//Talons are defined
 	
@@ -41,7 +42,8 @@ public class DriveTrain extends Subsystem {
 		bL = new WPI_TalonSRX(bLID);
 		fR = new WPI_TalonSRX(fRID);
 		bR = new WPI_TalonSRX(bRID);
-		Shifty = new Solenoid(59, 0);
+		Shifty = new Solenoid(0, 3);
+		Shifty2 = new Solenoid(0,4);
 		//notShifty = new Solenoid(0);
 		//bL.setSensorPhase(true);
 		//talons are connected to actual IDs via the constructor
@@ -67,16 +69,16 @@ public class DriveTrain extends Subsystem {
 	
 	public void TeleOpCraneDrive(Joystick left, Joystick right){
 		
-	 	drive.arcadeDrive(left.getY(), -right.getX(), true);
+	 	drive.arcadeDrive(left.getY(), right.getX(), true);
 		
 	}
 	public void Shift(){
 		Shifty.set(true);
-		//notShifty.set(true);
+		Shifty2.set(true);
 	} 
 	public void Unshift(){
 		Shifty.set(false);
-		//notShifty.set(false);
+		Shifty2.set(false);
 	}
     public void initDefaultCommand() {
     	

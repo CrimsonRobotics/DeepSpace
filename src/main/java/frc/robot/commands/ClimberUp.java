@@ -3,7 +3,13 @@ package frc.robot.commands;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+<<<<<<< Updated upstream
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+=======
+
+//import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+>>>>>>> Stashed changes
 
 //import edu.wpi.first.wpilibj.command.Command;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -35,7 +41,8 @@ public class ClimberUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.climber.ClimberUp();    	//while (limitSwitch.get()) {
+        Robot.climber.ClimberUp(Robot.m_oi.getcoDriver());  
+         	//while (limitSwitch.get()) {
             //Timer.delay(10);
             SmartDashboard.putNumber("Encoder Front Left", Robot.climber.climberFrontLeft.getSensorCollection().getQuadraturePosition());
             SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());

@@ -84,7 +84,7 @@ public class OI {
     centerButton.whenReleased(new CenterIn());
     shifter.whenPressed(new Shift());
     shifter.whenReleased(new Unshift());
-    armShifter.whenPressed(new ArmShift());
+    armShifter.toggleWhenPressed(new ArmShift());
 		//
 		//dhs
 	}
