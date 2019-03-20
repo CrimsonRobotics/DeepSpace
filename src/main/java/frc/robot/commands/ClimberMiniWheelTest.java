@@ -13,19 +13,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class DropperUp extends Command {
+public class ClimberMiniWheelTest extends Command {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public DropperUp() {
-        // Use requires() here to declare subsystem dependencies
-        //requires(Robot.m_subsystem);
-        //requires(Robot.hatchintake);
-        
-       // WPI_TalonSRX(eL1).set(0.5); //?? 
-       
-   
-    }
+    
 
     // Called just before this Command runs the first time
     protected void initialize() {
@@ -35,7 +27,9 @@ public class DropperUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.hatchintake.DropperUp();    	//while (limitSwitch.get()) {
+        Robot.climber.MiniWheelTest(); 
+       
+        //while (limitSwitch.get()) {
             //Timer.delay(10);
            }
     	
@@ -44,7 +38,7 @@ public class DropperUp extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

@@ -25,10 +25,10 @@ public class RobotMap {
   public static int DT_FRONTRIGHT = 2;
   public static int DT_BACKRIGHT= 1; 
 
-  public static int climberBackRight = 12;
-  public static int climberBackLeft =  11;
-  public static int climberFrontRight = 4;
-  public static int climberFrontLeft = 8;
+  public static int climberBackLeft = 11;
+  public static int climberBackRight =  12;
+  public static int climberFrontRight = 4;//was left 3/7
+  public static int climberFrontLeft = 8;//was right 3/7
 
   public static int climberWheelL = 9;
   public static int climberWheelR = 10;
@@ -52,13 +52,14 @@ public class RobotMap {
   //public static int dropper5 = 5;
   //public static int dropper6 = 6;
   public static int centerS = 2;
-  //public static int grabberS = 3;
+  public static int centerS2 = 3;
   //public static int grabberS2 = 4;
   //public static int grabberS3 = 5;
   //public static int grabberS4 = 6;
   public static int ArmShifter = 0;//mod1
   public static int ArmShifter2 = 1;//mod1
-  //public static int Shifty = 0;
+  public static int Shifty = 2;
+  public static int Shifty2 = 4;
  // public static int centerS2 = 6;
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.

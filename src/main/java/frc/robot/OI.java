@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.IntakeStop;
+import frc.robot.commands.MiniWheelStop;
 import frc.robot.commands.Outtakeslow;
 import frc.robot.commands.Shift;
 import frc.robot.commands.StopClimber;
@@ -18,12 +19,23 @@ import frc.robot.commands.Unshift;
 
 import frc.robot.commands.CenterIn;
 import frc.robot.commands.ArmShift;
+import frc.robot.commands.ArmUnshift;
 import frc.robot.commands.BackDown;
 
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;
-
+import frc.robot.commands.ClimberMiniWheelTest;
+import frc.robot.commands.ClimberTestBackDown;
+import frc.robot.commands.ClimberTestBackStop;
+import frc.robot.commands.ClimberTestBackUp;
+import frc.robot.commands.ClimberTestDown;
+import frc.robot.commands.ClimberTestFrontDown;
+import frc.robot.commands.ClimberTestFrontStop;
+import frc.robot.commands.ClimberTestFrontUp;
+import frc.robot.commands.ClimberTestHold;
+import frc.robot.commands.ClimberTestStop;
+import frc.robot.commands.ClimberTestUp;
 import frc.robot.commands.ClimberUp;
 import frc.robot.commands.Drop;
 import frc.robot.commands.DropperUp;
@@ -44,18 +56,30 @@ public class OI {
 
   private JoystickButton intake = new JoystickButton(coDriver, 2);
   private JoystickButton intake2 = new JoystickButton(coDriver, 1);
-  private JoystickButton climberButton = new JoystickButton(coDriver, 4);
-  private JoystickButton climberBackDown = new JoystickButton(coDriver,5);
-  private JoystickButton climberFrontDown = new JoystickButton(coDriver,6);
+ private JoystickButton miniWheels = new JoystickButton(coDriver, 5);
+  //private JoystickButton climberBackDown = new JoystickButton(coDriver,5);
+  //private JoystickButton climberFrontDown = new JoystickButton(coDriver,6);
+  private JoystickButton climberTestUp = new JoystickButton(coDriver,6);
+  private JoystickButton climberTestStop = new JoystickButton(coDriver,4);
+  //private JoystickButton climberBackTestUp = new JoystickButton(coDriver,6);
+  private JoystickButton climberBackTestDown = new JoystickButton(coDriver,10);
+ // private JoystickButton climberFrontTestUp = new JoystickButton(coDriver,0);
+  private JoystickButton climberFrontTestDown = new JoystickButton(coDriver,8);
+  //private JoystickButton MiniWheels = new JoystickButton(coDriver, 4);
 
-  private JoystickButton clawButton = new JoystickButton(coDriver, 7);
-  private JoystickButton dropperButton = new JoystickButton(coDriver, 8);
-  private JoystickButton grabberButton = new JoystickButton(coDriver, 10);
+  private JoystickButton clawButton = new JoystickButton(coDriver, 7);//punch
+//  private JoystickButton dropperButton = new JoystickButton(coDriver, 8);
+  //private JoystickButton grabberButton = new JoystickButton(coDriver, 10);
   private JoystickButton centerButton = new JoystickButton(coDriver, 9);
-  private JoystickButton shifter = new JoystickButton(driverLeft, 2);
+  private JoystickButton shifter = new JoystickButton(driverLeft, 1);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
+<<<<<<< HEAD
   private JoystickButton armShifter = new JoystickButton(coDriver, 11);
   private JoystickButton armShiter2 = new JoystickButton(coDriver, 12);
+=======
+  private JoystickButton armShifter = new JoystickButton(coDriver, 12);
+  //private JoystickButton armShifter2 = new JoystickButton(coDriver,11);
+>>>>>>> 5dba7fbb30dfafc45088439db6d13e13e8201f6e
 
   //
   public OI() {
@@ -67,24 +91,45 @@ public class OI {
     intake3.whenPressed(new Outtakeslow());
     intake3.whenReleased(new IntakeStop());
     
-    
+   /* 
     climberButton.whileHeld(new ClimberUp());
     climberButton.whenReleased(new StopClimber());
     climberBackDown.whileHeld(new BackDown());
     climberBackDown.whenReleased(new StopClimber());
     climberFrontDown.whileHeld(new FrontDown());
     climberFrontDown.whenReleased(new StopClimber());
+*/
+    climberTestUp.whileHeld(new ClimberTestUp());
+    climberTestUp.whenReleased(new ClimberTestHold());
 
-    clawButton.whenPressed(new ClawIn());
+    climberTestStop.whenPressed(new ClimberTestStop());
+/*
+    climberBackTestUp.whileHeld(new ClimberTestBackUp());
+    climberBackTestUp.whenReleased(new ClimberTestBackStop());
+*/
+    climberBackTestDown.whileHeld(new ClimberTestBackDown());
+    climberBackTestDown.whenReleased(new ClimberTestBackStop());
+
+    climberFrontTestDown.whileHeld(new ClimberTestFrontDown());
+    climberFrontTestDown.whenReleased(new ClimberTestFrontStop());
+/*
+    climberFrontTestUp.whileHeld(new ClimberTestFrontUp());
+    climberFrontTestUp.whenReleased(new ClimberTestFrontStop());*/
+    miniWheels.whileHeld(new ClimberMiniWheelTest());
+    miniWheels.whenReleased(new MiniWheelStop());
+
+    clawButton.whileHeld(new ClawIn());
     clawButton.whenReleased(new ClawOut());
-    dropperButton.whenPressed(new Drop());
-    dropperButton.whenReleased(new DropperUp());
-    grabberButton.whenPressed(new Grab());
+  //  dropperButton.whileHeld(new Drop());
+   // dropperButton.whenReleased(new DropperUp());
+   // dropperButton.cancelWhenPressed(new DropperUp());
     centerButton.whenPressed(new CenterOut());
     centerButton.whenReleased(new CenterIn());
     shifter.whenPressed(new Shift());
     shifter.whenReleased(new Unshift());
-    armShifter.toggleWhenPressed(new ArmShift());
+    armShifter.whenPressed(new ArmShift());//if changed, change to whenPressed
+    armShifter.whenReleased(new ArmUnshift());
+//    armShifter2.whenPressed(new ArmUnshift());
 		//
 		//dhs
 	}

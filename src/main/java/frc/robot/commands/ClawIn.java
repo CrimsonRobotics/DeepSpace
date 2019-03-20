@@ -20,7 +20,7 @@ public class ClawIn extends Command {
     public ClawIn() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.hatchintake);
+        //requires(Robot.hatchintake);
         
        // WPI_TalonSRX(eL1).set(0.5); //?? 
        

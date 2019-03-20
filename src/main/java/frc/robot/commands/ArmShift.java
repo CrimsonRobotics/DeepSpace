@@ -20,7 +20,7 @@ public class ArmShift extends Command {
     public ArmShift() {
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
-        requires(Robot.arm);
+        //requires(Robot.arm);
         
        // WPI_TalonSRX(eL1).set(0.5); 
        
@@ -46,7 +46,7 @@ public class ArmShift extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

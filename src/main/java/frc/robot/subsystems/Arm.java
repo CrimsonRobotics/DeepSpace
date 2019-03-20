@@ -22,7 +22,7 @@ public class Arm extends Subsystem {
 	public int Antigrav; 
 	public boolean atRest;
 	public DoubleSolenoid shifter;
-	public boolean shiftToggle=false;
+	public boolean shiftToggle=true;
 
 	public Arm(int mod2, int armID, int shiftID, int shiftID2){
 		Arm = new WPI_TalonSRX(armID);
@@ -30,7 +30,8 @@ public class Arm extends Subsystem {
 	}
 	public void ArmWork(Joystick Driver){
 		EncPosition = Arm.getSensorCollection().getQuadraturePosition();
-
+		Arm.set(-.4*Driver.getY());
+/*
 		if(Driver.getY()<.1&&Driver.getY()>-.1){
 			if(atRest==false){
 				whenStopped=EncPosition;
@@ -66,24 +67,20 @@ public class Arm extends Subsystem {
 		}
 		else{
 			if(Driver.getY()<0){
-				Arm.set(.4*Driver.getY());
+				Arm.set(-.4*Driver.getY());
 				atRest=false;
 			}
 		else{
 			Arm.set(.2);
 		}
 	}
-	}
+		}*/
 }
 	public void ArmShift(){
-		if(shiftToggle){
-			shifter.set(Value.kReverse);
-			shiftToggle=false;
-		}
-		else if(shiftToggle==false ){
 			shifter.set(Value.kForward);
-			shiftToggle=true;
-		}
+	}
+	public void ArmUnshift(){
+		shifter.set(Value.kReverse);
 	} 
 	
 	@Override
@@ -93,3 +90,4 @@ public class Arm extends Subsystem {
 	
 	}
 
+	
