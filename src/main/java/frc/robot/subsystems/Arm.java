@@ -30,7 +30,7 @@ public class Arm extends Subsystem {
 	}
 	public void ArmWork(Joystick Driver){
 		EncPosition = Arm.getSensorCollection().getQuadraturePosition();
-		Arm.set(-.4*Driver.getY());
+		Arm.set(-.6*Driver.getY());
 /*
 		if(Driver.getY()<.1&&Driver.getY()>-.1){
 			if(atRest==false){

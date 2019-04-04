@@ -45,8 +45,8 @@ public class MiniWheels extends Command {
         SmartDashboard.putNumber("Encoder Front Right", Robot.climber.climberFrontRight.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Encoder Back Left", Robot.climber.climberBackLeft.getSensorCollection().getQuadraturePosition());
         SmartDashboard.putNumber("Encoder Back Right", Robot.climber.climberBackRight.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Mini Wheel", Robot.climber.climbWheelL.getSensorCollection().getQuadraturePosition());
-        SmartDashboard.putNumber("Mini Wheel 2", Robot.climber.climbWheelR.getSensorCollection().getQuadraturePosition());    
+        SmartDashboard.putNumber("Mini Wheel", Robot.climber.climbWheelL.get());
+        SmartDashboard.putNumber("Mini Wheel 2", Robot.climber.climbWheelR.get());   
         
         SmartDashboard.putBoolean("@target Front Left", Robot.climber.nextPositionFL);
         SmartDashboard.putBoolean("@target Front Right", Robot.climber.nextPositionFR);

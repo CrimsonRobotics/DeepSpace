@@ -35,6 +35,7 @@ public class HatchIntake extends Subsystem {
 	protected void initDefaultCommand() {
 		//setDefaultCommand(new ClimberUp());
 	}
+	
 	public void ClawIn(){
 		ClawS.set(Value.kForward);
 	}

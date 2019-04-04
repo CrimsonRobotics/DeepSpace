@@ -25,6 +25,7 @@ import frc.robot.commands.BackDown;
 import frc.robot.commands.CenterOut;
 import frc.robot.commands.ClawIn;
 import frc.robot.commands.ClawOut;
+import frc.robot.commands.ClimberMiniWheelReverseTest;
 import frc.robot.commands.ClimberMiniWheelTest;
 import frc.robot.commands.ClimberTestBackDown;
 import frc.robot.commands.ClimberTestBackStop;
@@ -41,6 +42,7 @@ import frc.robot.commands.Drop;
 import frc.robot.commands.DropperUp;
 import frc.robot.commands.FrontDown;
 import frc.robot.commands.Grab;
+import frc.robot.commands.HatchSequential;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -54,10 +56,11 @@ public class OI {
   // private JoystickButton intake = new JoystickButton(coDriver, 1);
   // private JoystickButton climberButton = new JoystickButton(coDriver, 2);
 
+  private JoystickButton hatchSequentialButton = new JoystickButton(driverLeft,3);
   private JoystickButton intake = new JoystickButton(coDriver, 2);
   private JoystickButton intake2 = new JoystickButton(coDriver, 1);
  private JoystickButton miniWheels = new JoystickButton(coDriver, 5);
-  //private JoystickButton climberBackDown = new JoystickButton(coDriver,5);
+  private JoystickButton miniWheelsReverse = new JoystickButton(coDriver,11);
   //private JoystickButton climberFrontDown = new JoystickButton(coDriver,6);
   private JoystickButton climberTestUp = new JoystickButton(coDriver,6);
   private JoystickButton climberTestStop = new JoystickButton(coDriver,4);
@@ -74,11 +77,12 @@ public class OI {
   private JoystickButton shifter = new JoystickButton(driverLeft, 1);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
   private JoystickButton armShifter = new JoystickButton(coDriver, 12);
-  //private JoystickButton armShifter2 = new JoystickButton(coDriver,11);
+
 
   //
   public OI() {
 
+    hatchSequentialButton.whenPressed(new HatchSequential());
     intake.whenPressed(new IntakeOut());
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn()); 
@@ -112,6 +116,9 @@ public class OI {
     climberFrontTestUp.whenReleased(new ClimberTestFrontStop());*/
     miniWheels.whileHeld(new ClimberMiniWheelTest());
     miniWheels.whenReleased(new MiniWheelStop());
+
+    miniWheelsReverse.whileHeld(new ClimberMiniWheelReverseTest());
+    miniWheelsReverse.whenReleased(new MiniWheelStop());
 
     clawButton.whileHeld(new ClawIn());
     clawButton.whenReleased(new ClawOut());

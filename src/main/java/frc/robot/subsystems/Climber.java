@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 import frc.robot.commands.ClimberTestUp;
+import frc.robot.commands.MiniWheelStop;
 import frc.robot.commands.MiniWheels;
 
 //unnecesary import
@@ -31,16 +32,18 @@ public class Climber extends Subsystem {
 	public int whenStoppedFL;
 	public int whenStoppedFR;
 	public int Stop = 15000;
-	public double speedbl = -.3;
-	public double speedbr = -.34;
-	public double speedfr = -.39;
-	public double speedfl = -.45;
-	public double FrontDownSpeed = -.2;
-	public double BackDownSpeed = -.25;
-	public double holdbl = -.12;
-	public double holdbr = -.12;
-	public double holdfl = -.22;
-	public double holdfr = -.22;
+	public double speedbl = -.31;//-.31;
+	public double speedbr = -.35;//-.35
+	public double speedfr = -.43;//-.41
+	public double speedfl = -.41;//-.41
+	public double FrontDownSpeedFR = -.32;
+	public double FrontDownSpeedFL = -.27;
+	public double BackDownSpeedBR = -.3;
+	public double BackDownSpeedBL = -.34;
+	public double holdbl = -.13;
+	public double holdbr = -.13;
+	public double holdfl = -.23;
+	public double holdfr = -.23;
 	public double holdingfl = 0;
 	public double holdingfr = 0;
 	public double holdingbl = 0;
@@ -61,8 +64,8 @@ public class Climber extends Subsystem {
 	public boolean GRatedStop;
 	public int levelThreeTarget = 27000;
 	public int stepTarget;
-	public int stepIncriment = 2500;
-	public int softwareLimit = 1500;
+	public int stepIncriment = 1800;
+	public int softwareLimit = 500;
 
 
 	public Climber(int climbIDBL, int climbIDBR, int climbIDFL, int climbIDFR, int climbWheelLID, int climbWheelRID){
@@ -83,6 +86,8 @@ public class Climber extends Subsystem {
 		EncPositionBR = climberBackRight.getSensorCollection().getQuadraturePosition();
 		EncPositionFL = climberFrontLeft.getSensorCollection().getQuadraturePosition();
 		EncPositionFR = climberFrontRight.getSensorCollection().getQuadraturePosition();
+
+
 		//while(EncPositionBL<500&&EncPositionBR<500&&EncPositionFL<500&&EncPositionFR<500){
 		/*if(Math.abs(EncPositionBL)<Stop){
 			climberBackLeft.set(-speed1);
@@ -285,7 +290,7 @@ public class Climber extends Subsystem {
 		EncPositionBR = climberBackRight.getSensorCollection().getQuadraturePosition();
 		EncPositionFL = climberFrontLeft.getSensorCollection().getQuadraturePosition();
 		EncPositionFR = climberFrontRight.getSensorCollection().getQuadraturePosition();
-
+		//if(EncPositionBL>levelThreeTarget||-EncPositionBR>levelThreeTarget||EncPositionFL>levelThreeTarget||-EncPositionFR>levelThreeTarget){
 		if(nextPositionBL==false||nextPositionBR==false||nextPositionFL==false||nextPositionFR==false){
 		if(-EncPositionBR<stepTarget){
 			climberBackRight.set(speedbr);	
@@ -326,8 +331,9 @@ public class Climber extends Subsystem {
 				nextPositionFR=false;
 			}
 		}
-		
 	}
+		
+	//}
 	public void ClimberTestDown(){
 		climberBackRight.set(-speedbr);
 		climberBackLeft.set(speedbl);
@@ -357,13 +363,13 @@ public class Climber extends Subsystem {
 			climberFrontLeft.set(0);
 		}
 		else{
-		climberFrontLeft.set(-FrontDownSpeed);
+		climberFrontLeft.set(-FrontDownSpeedFL);
 		}
 		if(-EncPositionFR<softwareLimit){
 			climberFrontRight.set(0);
 		}
 		else{
-		climberFrontRight.set(FrontDownSpeed);
+		climberFrontRight.set(FrontDownSpeedFR);
 		}
 	}
 	public void ClimberTestFrontStop(){
@@ -381,13 +387,13 @@ public class Climber extends Subsystem {
 			climberBackLeft.set(0);
 		}
 		else{
-		climberBackLeft.set(BackDownSpeed);
+		climberBackLeft.set(BackDownSpeedBL);
 		}
 		if(-EncPositionBR<softwareLimit){
 			climberBackRight.set(0);
 		}
 		else{
-		climberBackRight.set(-BackDownSpeed);
+		climberBackRight.set(-BackDownSpeedBR);
 		}
 	}
 	public void ClimberTestBackStop(){
@@ -402,6 +408,11 @@ public class Climber extends Subsystem {
 		climbWheelL.set(0);
 		climbWheelR.set(0);
 	}
+	public void MiniWheelReverseTest(){
+		climbWheelL.set(wheelSpeed);
+		climbWheelR.set(-wheelSpeed);
+	}
+
 	@Override
 	protected void initDefaultCommand() {
 		setDefaultCommand(new MiniWheels());
