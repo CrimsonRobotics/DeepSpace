@@ -76,19 +76,13 @@ public class OI {
   private JoystickButton centerButton = new JoystickButton(coDriver, 9);
   private JoystickButton shifter = new JoystickButton(driverLeft, 1);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
-<<<<<<< HEAD
-  private JoystickButton armShifter = new JoystickButton(coDriver, 11);
-  private JoystickButton armShiter2 = new JoystickButton(coDriver, 12);
-=======
+
   private JoystickButton armShifter = new JoystickButton(coDriver, 12);
-<<<<<<< HEAD
 
-=======
-  //private JoystickButton armShifter2 = new JoystickButton(coDriver,11);
->>>>>>> 5dba7fbb30dfafc45088439db6d13e13e8201f6e
->>>>>>> 89467031810ca2616ccc3bdb15649e9f505d7b5e
 
-  //
+
+
+
   public OI() {
 
     hatchSequentialButton.whenPressed(new HatchSequential());
