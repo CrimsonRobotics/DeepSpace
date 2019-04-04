@@ -18,12 +18,7 @@ import frc.robot.subsystems.HatchIntake;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Intake;
-import edu.wpi.cscore.CvSource;
 import edu.wpi.first.cameraserver.*;
-import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.UsbCamera;
 //import edu.wpi.first.wpilibj.IterativeRobot;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -52,6 +47,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+
     System.out.println("running");
     new Thread(() -> {
       //UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
@@ -77,6 +73,7 @@ public class Robot extends TimedRobot {
       }
   }).start();
     
+>>>>>>> 5dba7fbb30dfafc45088439db6d13e13e8201f6e
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
