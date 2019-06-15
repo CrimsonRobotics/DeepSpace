@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -14,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class ClawIn extends Command {
+    private Timer waitDelay= new Timer();
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
@@ -29,7 +31,6 @@ public class ClawIn extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
    
     }
 
@@ -48,7 +49,7 @@ public class ClawIn extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

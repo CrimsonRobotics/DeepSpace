@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ClawIn;
 
@@ -15,16 +16,21 @@ import frc.robot.commands.ClawIn;
 /**
  *
  */
-public class HatchSequential extends CommandGroup {
+public class HatchSequentialDeliver extends CommandGroup {
 	//WPI_TalonSRX Elevator1;
 	//WPI_TalonSRX Elevator2;
 	//DigitalInput limitSwitch;
-    public HatchSequential() {
+    public HatchSequentialDeliver() {
         //setInterruptible(true);
-        addSequential(new ClawOut());
+        //addSequential(new ClawOut());
         addSequential(new CenterOut());
+        addSequential(new WaitCommand(1));
         addSequential(new ClawIn());
+        addSequential(new WaitCommand(.25));
         addSequential(new CenterIn());
+        addSequential(new WaitCommand(.5));
+        addSequential(new ClawOut()); 
+        //addSequential(new CenterIn());
         // Use requires() here to declare subsystem dependencies
         //requires(Robot.m_subsystem);
         //requires(Robot.arm);
@@ -35,14 +41,14 @@ public class HatchSequential extends CommandGroup {
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() {
-    	
+   /* protected void initialize() {
+     	
    
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.arm.ArmShift(); 
+        //Robot.hatchintake.ClawIn(); 
        
         //while (limitSwitch.get()) {
             //Timer.delay(10);
@@ -53,7 +59,7 @@ public class HatchSequential extends CommandGroup {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
@@ -63,5 +69,5 @@ public class HatchSequential extends CommandGroup {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    }
+    }*/
 }

@@ -18,6 +18,13 @@ import frc.robot.subsystems.HatchIntake;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Intake;
+
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+
+import edu.wpi.cscore.CvSink;
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.*;
 //import edu.wpi.first.wpilibj.IterativeRobot;
 /**
@@ -56,8 +63,8 @@ public class Robot extends TimedRobot {
       UsbCamera camera = CameraServer.getInstance().startAutomaticCapture(0);
       UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(1);
       // might have to drop resolution further during competition
-      camera.setFPS(8);
-      camera1.setFPS(8);
+      camera.setFPS(15);
+      camera1.setFPS(15);
 
       CvSink cvSink = CameraServer.getInstance().getVideo();
       CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 320, 240);
@@ -73,7 +80,6 @@ public class Robot extends TimedRobot {
       }
   }).start();
     
->>>>>>> 5dba7fbb30dfafc45088439db6d13e13e8201f6e
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);

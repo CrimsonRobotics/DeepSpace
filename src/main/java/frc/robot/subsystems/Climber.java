@@ -32,14 +32,14 @@ public class Climber extends Subsystem {
 	public int whenStoppedFL;
 	public int whenStoppedFR;
 	public int Stop = 15000;
-	public double speedbl = -.31;//-.31;
-	public double speedbr = -.35;//-.35
-	public double speedfr = -.43;//-.41
-	public double speedfl = -.41;//-.41
-	public double FrontDownSpeedFR = -.32;
-	public double FrontDownSpeedFL = -.27;
-	public double BackDownSpeedBR = -.3;
-	public double BackDownSpeedBL = -.34;
+	public double speedbl = -.51;//-.31;
+	public double speedbr = -.55;//-.35
+	public double speedfr = -.73;//-.43
+	public double speedfl = -.71;//-.41
+	public double FrontDownSpeedFR = -.55;//-.32
+	public double FrontDownSpeedFL = -.55;//-.27
+	public double BackDownSpeedBR = -.55;//-.3
+	public double BackDownSpeedBL = -.55;//-.34
 	public double holdbl = -.13;
 	public double holdbr = -.13;
 	public double holdfl = -.23;
@@ -65,7 +65,7 @@ public class Climber extends Subsystem {
 	public int levelThreeTarget = 27000;
 	public int stepTarget;
 	public int stepIncriment = 1800;
-	public int softwareLimit = 500;
+	public int softwareLimit = 1000;
 
 
 	public Climber(int climbIDBL, int climbIDBR, int climbIDFL, int climbIDFR, int climbWheelLID, int climbWheelRID){

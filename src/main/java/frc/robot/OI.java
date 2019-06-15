@@ -42,7 +42,8 @@ import frc.robot.commands.Drop;
 import frc.robot.commands.DropperUp;
 import frc.robot.commands.FrontDown;
 import frc.robot.commands.Grab;
-import frc.robot.commands.HatchSequential;
+import frc.robot.commands.HatchSequentialAquire;
+import frc.robot.commands.HatchSequentialDeliver;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -56,24 +57,25 @@ public class OI {
   // private JoystickButton intake = new JoystickButton(coDriver, 1);
   // private JoystickButton climberButton = new JoystickButton(coDriver, 2);
 
-  private JoystickButton hatchSequentialButton = new JoystickButton(driverLeft,3);
   private JoystickButton intake = new JoystickButton(coDriver, 2);
   private JoystickButton intake2 = new JoystickButton(coDriver, 1);
  private JoystickButton miniWheels = new JoystickButton(coDriver, 5);
-  private JoystickButton miniWheelsReverse = new JoystickButton(coDriver,11);
   //private JoystickButton climberFrontDown = new JoystickButton(coDriver,6);
   private JoystickButton climberTestUp = new JoystickButton(coDriver,6);
   private JoystickButton climberTestStop = new JoystickButton(coDriver,4);
   //private JoystickButton climberBackTestUp = new JoystickButton(coDriver,6);
   private JoystickButton climberBackTestDown = new JoystickButton(coDriver,10);
  // private JoystickButton climberFrontTestUp = new JoystickButton(coDriver,0);
-  private JoystickButton climberFrontTestDown = new JoystickButton(coDriver,8);
+  private JoystickButton climberFrontTestDown = new JoystickButton(coDriver,11);
   //private JoystickButton MiniWheels = new JoystickButton(coDriver, 4);
+  private JoystickButton miniWheelsReverse = new JoystickButton(driverLeft, 6);
+  
+//  private JoystickButton clawButton = new JoystickButton(coDriver, 7);//punch
+//  private JoystickButton centerButton = new JoystickButton(coDriver, 9);
 
-  private JoystickButton clawButton = new JoystickButton(coDriver, 7);//punch
-//  private JoystickButton dropperButton = new JoystickButton(coDriver, 8);
-  //private JoystickButton grabberButton = new JoystickButton(coDriver, 10);
-  private JoystickButton centerButton = new JoystickButton(coDriver, 9);
+private JoystickButton hatchSequentialAquireButton = new JoystickButton(coDriver,7);
+private JoystickButton hatchSequentialDeliverButton = new JoystickButton(coDriver,9);
+  
   private JoystickButton shifter = new JoystickButton(driverLeft, 1);
   private JoystickButton intake3 = new JoystickButton(coDriver, 3);
 
@@ -85,7 +87,8 @@ public class OI {
 
   public OI() {
 
-    hatchSequentialButton.whenPressed(new HatchSequential());
+    hatchSequentialAquireButton.whenPressed(new HatchSequentialAquire());
+    hatchSequentialDeliverButton.whenPressed(new HatchSequentialDeliver());
     intake.whenPressed(new IntakeOut());
     intake.whenReleased(new IntakeStop());
     intake2.whenPressed(new IntakeIn()); 
@@ -123,13 +126,11 @@ public class OI {
     miniWheelsReverse.whileHeld(new ClimberMiniWheelReverseTest());
     miniWheelsReverse.whenReleased(new MiniWheelStop());
 
-    clawButton.whileHeld(new ClawIn());
+  /*  clawButton.whileHeld(new ClawIn());
     clawButton.whenReleased(new ClawOut());
-  //  dropperButton.whileHeld(new Drop());
-   // dropperButton.whenReleased(new DropperUp());
-   // dropperButton.cancelWhenPressed(new DropperUp());
+  
     centerButton.whenPressed(new CenterOut());
-    centerButton.whenReleased(new CenterIn());
+    centerButton.whenReleased(new CenterIn());*/
     shifter.whenPressed(new Shift());
     shifter.whenReleased(new Unshift());
     armShifter.whenPressed(new ArmShift());//if changed, change to whenPressed
